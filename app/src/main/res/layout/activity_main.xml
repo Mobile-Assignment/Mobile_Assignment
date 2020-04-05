@@ -52,8 +52,6 @@
         android:textAppearance="@style/ez_shipping" />
 
     <!-- LOGIN -->
-
-    <!-- SIGN UP -->
     <Button
         android:id="@+id/login"
         android:layout_width="308dp"
@@ -69,6 +67,7 @@
         android:text="@string/login"
         android:textAppearance="@style/login" />
 
+    <!-- SIGN UP -->
     <Button
         android:id="@+id/sign_up"
         android:layout_width="308dp"
@@ -84,6 +83,7 @@
         android:text="@string/sign_up"
         android:textAppearance="@style/sign_up" />
 
+    <!-- Logo -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
