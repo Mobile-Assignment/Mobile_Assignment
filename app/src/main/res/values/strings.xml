@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">My Application3</string>
+    <string name="app_name">Home Screen</string>
+    <string name="ez_shipping">EZ SHIPPING</string>
+    <string name="login">LOGIN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="logo_home">logo_home</string>
 </resources>
