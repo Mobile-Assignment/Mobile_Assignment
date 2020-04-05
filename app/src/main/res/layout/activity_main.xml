@@ -52,36 +52,37 @@
         android:textAppearance="@style/ez_shipping" />
 
     <!-- LOGIN -->
+
+    <!-- SIGN UP -->
     <Button
         android:id="@+id/login"
         android:layout_width="308dp"
         android:layout_height="56dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="27dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="357dp"
-        android:text="@string/login"
-        android:textAppearance="@style/login"
+        android:layout_marginStart="49dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="353dp"
         android:background="@drawable/login_button"
         android:gravity="center_horizontal|center_vertical"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="27dp" />
+        android:text="@string/login"
+        android:textAppearance="@style/login" />
 
-    <!-- SIGN UP -->
     <Button
         android:id="@+id/sign_up"
         android:layout_width="308dp"
         android:layout_height="56dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="28dp"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="437dp"
-        android:text="@string/sign_up"
-        android:textAppearance="@style/sign_up"
         android:background="@drawable/sign_up_button"
         android:gravity="center_horizontal|center_vertical"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="28dp" />
+        android:text="@string/sign_up"
+        android:textAppearance="@style/sign_up" />
 
     <ImageView
         android:id="@+id/imageView2"
