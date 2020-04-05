@@ -5,4 +5,8 @@
     <string name="sign_up">SIGN UP</string>
     <string name="logo_home">logo_home</string>
     <string name="logo">LOGO</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="forgot_pass">Forgot Password ?</string>
 </resources>
