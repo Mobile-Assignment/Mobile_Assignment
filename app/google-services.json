@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "122664205587",
+    "firebase_url": "https://ezshipping-51353.firebaseio.com",
+    "project_id": "ezshipping-51353",
+    "storage_bucket": "ezshipping-51353.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122664205587:android:d73f82000363c989ee2ee6",
+        "android_client_info": {
+          "package_name": "com.example.myapplication3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122664205587-103lr5agh5uflsl8ebkaa4rcc5db4s4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6deOTN7EO1iCWRNxuo2wGUDyJlKkvE_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122664205587-103lr5agh5uflsl8ebkaa4rcc5db4s4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
