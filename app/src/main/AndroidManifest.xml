@@ -20,6 +20,7 @@
         <activity android:name=".SignUpScreen"></activity>
         <activity android:name=".HomeScreen"></activity>
         <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".PostageCalculator"></activity>
     </application>
 
 </manifest>
