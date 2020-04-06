@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpScreen">
+
+    <!-- Rect Browse -->
+    <View
+        android:id="@+id/rect_browse"
+        android:layout_width="match_parent"
+        android:layout_height="143dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/rect_browse" />
+
+    <!-- Rect View -->
+    <View
+        android:id="@+id/rect_view"
+        android:layout_width="match_parent"
+        android:layout_height="141dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="143dp"
+        android:background="@drawable/rect_browse" />
+
+    <!-- TRACK & TRACE -->
+    <Button
+        android:id="@+id/track_trace"
+        android:layout_width="308dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="68dp"
+        android:text="@string/track_trace"
+        android:textAppearance="@style/track_trace"
+        android:background="@drawable/login_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="32dp" />
+
+    <!-- POSTAGE CALCULATOR -->
+    <Button
+        android:id="@+id/postage_cal"
+        android:layout_width="309dp"
+        android:layout_height="57dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="185dp"
+        android:text="@string/postage_cal"
+        android:textAppearance="@style/track_trace"
+        android:background="@drawable/login_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp" />
+
+</RelativeLayout>

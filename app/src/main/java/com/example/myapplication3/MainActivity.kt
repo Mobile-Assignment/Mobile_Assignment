@@ -16,6 +16,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,LoginScreen::class.java)
             startActivity(intent)
         }
-    }
 
+        sign_up.setOnClickListener{
+            val intent = Intent(this,SignUpScreen::class.java)
+            startActivity(intent)
+        }
+    }
 }
