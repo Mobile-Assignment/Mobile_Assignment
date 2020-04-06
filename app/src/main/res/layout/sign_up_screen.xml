@@ -34,80 +34,68 @@
         android:contentDescription="@string/logo" />
 
     <!-- USERNAME -->
+
+    <!-- EMAIL ADDRESS -->
+
+    <!-- PASSWORD -->
+
+    <!-- CONFIRM PASSWORD -->
+
+    <!-- REGISTER -->
+
     <EditText
         android:id="@+id/username"
         android:layout_width="309dp"
         android:layout_height="40dp"
-        android:ems="10"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="290dp"
-        android:hint="@string/username"
-        android:textAppearance="@style/username"
-        android:background="@drawable/text_box"
-        android:gravity="center_horizontal|center_vertical"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="340dp"
         android:autofillHints="@string/username"
-        android:inputType="textPersonName" />
+        android:background="@drawable/text_box"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/username" />
 
-    <!-- EMAIL ADDRESS -->
     <EditText
         android:id="@+id/email"
         android:layout_width="309dp"
         android:layout_height="40dp"
-        android:ems="10"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="346dp"
-        android:hint="@string/email"
-        android:textAppearance="@style/password"
-        android:inputType="textEmailAddress"
-        android:background="@drawable/text_box"
-        android:gravity="center_horizontal|center_vertical"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp"
-        android:autofillHints="@string/email"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="395dp"
+        android:autofillHints="@string/email"
+        android:background="@drawable/text_box"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textAppearance="@style/password" />
 
-    <!-- PASSWORD -->
     <EditText
         android:id="@+id/password"
         android:layout_width="309dp"
         android:layout_height="40dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="26dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="401dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="453dp"
+        android:autofillHints="@string/password"
+        android:background="@drawable/text_box"
+        android:gravity="center_horizontal|center_vertical"
         android:hint="@string/password"
-        android:textAppearance="@style/password"
         android:inputType="textPassword"
-        android:background="@drawable/text_box"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="27dp"
-        android:autofillHints="@string/password" />
+        android:textAppearance="@style/password" />
 
-    <!-- CONFIRM PASSWORD -->
-    <EditText
-        android:id="@+id/confirm_password"
-        android:layout_width="309dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="26dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="457dp"
-        android:hint="@string/confirm_password"
-        android:textAppearance="@style/password"
-        android:inputType="textPassword"
-        android:background="@drawable/text_box"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="27dp"
-        android:autofillHints="@string/confirm_password" />
-
-    <!-- REGISTER -->
     <Button
         android:id="@+id/register"
         android:layout_width="134dp"
@@ -126,19 +114,26 @@
     <!-- Rectangle 8 -->
     <Button
         android:id="@+id/already_hav"
-        android:layout_width="165dp"
-        android:layout_height="19dp"
+        android:layout_width="126dp"
+        android:layout_height="25dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="23dp"
-        android:background="@drawable/rectangle_8"
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
+        android:layout_marginTop="556dp"
+        android:background="@drawable/track"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/already_hav"
-        android:textAllCaps="false"
         android:textAppearance="@style/already_hav"
-        android:textSize="14sp" />
+        android:textSize="9sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
 
 </RelativeLayout>

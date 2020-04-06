@@ -2,6 +2,7 @@
     <string name="app_name">EZ Shipping</string>
     <string name="ez_shipping">EZ SHIPPING</string>
     <string name="login">LOGIN</string>
+    <string name="login_email">EMAIL</string>
     <string name="sign_up">SIGN UP</string>
     <string name="logo_home">logo_home</string>
     <string name="logo">LOGO</string>
@@ -9,6 +10,7 @@
     <string name="password">PASSWORD</string>
     <string name="sign_in">SIGN IN</string>
     <string name="forgot_pass">Forgot Password?</string>
+    <string name="login_small">Back To Login</string>
     <string name="email">EMAIL ADDRESS</string>
     <string name="confirm_password">CONFIRM PASSWORD</string>
     <string name="register">REGISTER</string>
@@ -16,4 +18,8 @@
     <string name="reset">RESET</string>
     <string name="track_trace">TRACK AND TRACE</string>
     <string name="postage_cal">POSTAGE CALCULATOR</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="user_email">Email ID</string>
+    <string name="sign_out">SIGN OUT</string>
 </resources>
