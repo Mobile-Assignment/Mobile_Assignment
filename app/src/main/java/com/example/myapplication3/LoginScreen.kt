@@ -23,6 +23,11 @@ class LoginScreen : AppCompatActivity() {
             startActivity(Intent(this, ResetPassword::class.java))
             finish()
         }
+
+        sign_up_small.setOnClickListener{
+            startActivity(Intent(this, LoginScreen::class.java))
+            finish()
+        }
         sign_in.setOnClickListener {
             doLogin()
         }
