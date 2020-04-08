@@ -73,9 +73,9 @@ class LoginScreen : AppCompatActivity() {
                     startActivity(Intent(this,HomeScreen::class.java))
                     finish()
                 }
-                else {
+                /*else {
                      Toast.makeText(baseContext, "Please verify your email address.",Toast.LENGTH_SHORT).show()
-                }
+                }*/
             } /*else {
                Toast.makeText(baseContext, "Login Failed.",Toast.LENGTH_SHORT).show()
             }*/

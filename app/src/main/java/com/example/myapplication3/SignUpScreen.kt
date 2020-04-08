@@ -88,6 +88,8 @@ class SignUpScreen : AppCompatActivity() {
                         ?.addOnCompleteListener{ task ->
                             if(task.isSuccessful){
                                 uploadImageToFirebaseStorage()
+                                Toast.makeText(baseContext, "Please verify your Email.",
+                                    Toast.LENGTH_SHORT).show()
                                 startActivity(Intent(this,LoginScreen::class.java))
                                 finish()
                             }
