@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfirmTracking">
+
+    <!-- SUCCESSFUL ! -->
+    <TextView
+        android:id="@+id/successful"
+        android:layout_width="208dp"
+        android:layout_height="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="95dp"
+        android:text="@string/successful"
+        android:textAppearance="@style/successful"
+        android:gravity="center_horizontal|center_vertical"
+        />
+
+    <!-- Your Item Has Been Transferred successfully to <POSTAGE SERVICE> -->
+    <TextView
+        android:id="@+id/your_item_h"
+        android:layout_width="343dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="159dp"
+        android:background="@drawable/postage_button"
+        android:gravity="center_horizontal|top"
+        android:text="@string/your_item_h"
+        android:textAppearance="@style/your_item_h" />
+
+    <!-- Rect Browse -->
+    <View
+        android:id="@+id/rect_browse"
+        android:layout_width="match_parent"
+        android:layout_height="218dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="236dp"
+        android:background="@drawable/rect_postage" />
+
+    <!-- Here is your tracking number: (TRACKING NUMBER) -->
+    <TextView
+        android:id="@+id/here_is_you"
+        android:layout_width="221dp"
+        android:layout_height="108dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="285dp"
+        android:text="@string/here_is_you"
+        android:textAppearance="@style/here_is_you"
+        android:background="@drawable/here_is_you"
+        android:gravity="center_horizontal|top"
+        />
+
+
+</RelativeLayout>

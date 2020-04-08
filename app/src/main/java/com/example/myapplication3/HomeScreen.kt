@@ -13,7 +13,7 @@ class HomeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
 
-        track_trace.setOnClickListener{
+        postage_cal.setOnClickListener{
             val intent = Intent(this,PostageCalculator::class.java)
             startActivity(intent)
         }

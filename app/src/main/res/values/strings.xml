@@ -25,4 +25,21 @@
     <string name="postcode">POSTCODE</string>
     <string name="phone_number">PHONE NUMBER</string>
     <string name="save_as_dra">SAVE AS DRAFT</string>
+    <string name="postage_cos">POSTAGE COST</string>
+    <string name="postage_ser">POSTAGE SERVICE</string>
+    <string name="qr_code">QR_CODE</string>
+    <string name="successful">SUCCESSFUL !</string>
+    <string name="your_item_h">Your Item Has Been Transferred successfully to [POSTAGE SERVICE]</string>
+    <string name="here_is_you">Here is your tracking number:\u000D\n\n(TRACKING NUMBER)</string>
+    <string name="name">NAME</string>
+    <string name="account_id">ACCOUNT ID</string>
+    <string name="address">Address</string>
+    <string name="notification">Notification</string>
+    <string name="history">HISTORY</string>
+    <string name="profile_set">PROFILE SETTING</string>
+    <string name="current_pas">CURRENT PASSWORD</string>
+    <string name="new_password">NEW PASSWORD</string>
+    <string name="confirm_pas">CONFIRM PASSWORD</string>
+    <string name="save">SAVE</string>
+    <string name="icon_address">ADDRESS</string>
 </resources>
