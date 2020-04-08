@@ -31,4 +31,5 @@
     <string name="save_as_dra">SAVE AS DRAFT</string>
     <string name="user_email">Email ID</string>
     <string name="sign_out">SIGN OUT</string>
+    <string name="select_photo_register">SELECT PHOTO</string>
 </resources>

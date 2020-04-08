@@ -25,7 +25,7 @@ class LoginScreen : AppCompatActivity() {
         }
 
         sign_up_small.setOnClickListener{
-            startActivity(Intent(this, LoginScreen::class.java))
+            startActivity(Intent(this, SignUpScreen::class.java))
             finish()
         }
         sign_in.setOnClickListener {
@@ -56,7 +56,7 @@ class LoginScreen : AppCompatActivity() {
                     val user:FirebaseUser?= auth.currentUser
                     updateUI(user)
                 } else {
-                    Toast.makeText(baseContext, "Login Failed.",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, "Login Failed or verified Email Address.",Toast.LENGTH_SHORT).show()
                      updateUI(null)
                     
                 }
@@ -69,15 +69,15 @@ class LoginScreen : AppCompatActivity() {
     }
     private fun updateUI(currentUser: FirebaseUser?) {
             if(currentUser !=null) {
-                if(currentUser.isEmailVerified)        {
+                if(currentUser.isEmailVerified){
                     startActivity(Intent(this,HomeScreen::class.java))
                     finish()
                 }
                 else {
                      Toast.makeText(baseContext, "Please verify your email address.",Toast.LENGTH_SHORT).show()
                 }
-            }/* else {*/
-             /*   Toast.makeText(baseContext, "Login Failed.",Toast.LENGTH_SHORT).show()*/
-            /*}*/
+            } /*else {
+               Toast.makeText(baseContext, "Login Failed.",Toast.LENGTH_SHORT).show()
+            }*/
     }
 }
