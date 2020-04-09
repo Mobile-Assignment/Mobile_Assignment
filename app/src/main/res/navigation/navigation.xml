@@ -22,6 +22,7 @@
         android:name="com.example.myapplication3.PostageCalculatorSubmit"
         android:label="Post Stage Calculator"
         tools:layout="@layout/postage_calculator_submit"/>
+
     <fragment
         android:id="@+id/track_trace"
         android:name="com.example.myapplication3.TrackTrace"

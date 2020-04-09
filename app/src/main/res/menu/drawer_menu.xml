@@ -13,7 +13,7 @@
     <item
         android:id="@+id/postageCalculatorSubmit"
         android:icon="@drawable/ic_calculator"
-        android:title="@string/track_and_trace" />
+        android:title="@string/postage_calculator" />
     <item
         android:id="@+id/setting"
         android:icon="@drawable/ic_settings"
