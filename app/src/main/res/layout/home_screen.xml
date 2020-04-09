@@ -1,80 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".HomeScreen">
 
-    <!-- Rect Browse -->
-    <View
-        android:id="@+id/rect_browse"
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="143dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:background="@drawable/rect_browse" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <fragment
+            android:id="@+id/myNavHostFragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:navGraph="@navigation/navigation"
+            app:defaultNavHost="true" />
+    </LinearLayout>
 
-    <!-- Rect View -->
-    <View
-        android:id="@+id/rect_view"
-        android:layout_width="match_parent"
-        android:layout_height="141dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="143dp"
-        android:background="@drawable/rect_browse" />
 
-    <!-- TRACK & TRACE -->
-    <Button
-        android:id="@+id/track_trace"
-        android:layout_width="308dp"
-        android:layout_height="56dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="68dp"
-        android:text="@string/track_trace"
-        android:textAppearance="@style/track_trace"
-        android:background="@drawable/login_button"
-        android:gravity="center_horizontal|center_vertical" />
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
 
-    <!-- POSTAGE CALCULATOR -->
-    <Button
-        android:id="@+id/postage_cal"
-        android:layout_width="309dp"
-        android:layout_height="57dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="185dp"
-        android:text="@string/postage_cal"
-        android:textAppearance="@style/track_trace"
-        android:background="@drawable/login_button"
-        android:gravity="center_horizontal|center_vertical" />
-
-    <TextView
-        android:id="@+id/user_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="46dp"
-        android:gravity="center"
-        android:hint="@string/user_email"
-        android:textSize="30sp"
-        android:textStyle="bold|italic" />
-    <Button
-        android:id="@+id/sign_out"
-        android:layout_width="131dp"
-        android:layout_height="39dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="462dp"
-        android:text="@string/sign_out"
-        android:textAppearance="@style/sign_in"
-        android:background="@drawable/rectangle_7"
-        android:gravity="center_horizontal|center_vertical" />
-
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
+</layout>
