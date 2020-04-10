@@ -5,9 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile.ProfileSetting">
+    tools:context="com.example.myapplication3.profile.ProfileFragment">
 
     <!-- Rect Browse -->
+
     <View
         android:id="@+id/rect_browse"
         android:layout_width="match_parent"
@@ -15,17 +16,37 @@
         android:background="@drawable/rect_profile_set" />
 
     <!-- Ellipse 1 -->
-    <ImageButton
-        android:id="@+id/ellipse_1"
+
+    <ImageView
+        android:id="@+id/image_view"
         android:layout_width="98dp"
         android:layout_height="84dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="34dp"
-        android:background="@drawable/ellipse_2" />
+        android:background="@drawable/ic_boy" />
 
     <!-- Name -->
-    <TextView
+
+    <ProgressBar
+        android:id="@+id/progressbar_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/image_view"
+        android:layout_alignLeft="@+id/image_view"
+        android:layout_alignTop="@+id/image_view"
+        android:layout_alignEnd="@+id/image_view"
+        android:layout_alignRight="@+id/image_view"
+        android:layout_alignBottom="@+id/image_view"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="invisible" />
+
+    <EditText
         android:id="@+id/name"
         android:layout_width="191dp"
         android:layout_height="34dp"
@@ -37,59 +58,53 @@
         android:background="@drawable/name_button"
         android:gravity="center_horizontal|center_vertical" />
 
-    <!-- ACCOUNT ID -->
+
     <TextView
         android:id="@+id/email_id"
-        android:layout_width="208dp"
-        android:layout_height="24dp"
+        android:layout_width="191dp"
+        android:layout_height="34dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="195dp"
         android:text="@string/email_id"
-        android:textAppearance="@style/volumetric_"
+        android:textAppearance="@style/name"
+        android:background="@drawable/name_button"
         android:gravity="center_horizontal|center_vertical" />
 
     <!-- CURRENT PASSWORD -->
     <TextView
-        android:id="@+id/current_pas"
+        android:id="@+id/text_phone"
         android:layout_width="191dp"
         android:layout_height="34dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="321dp"
-        android:text="@string/current_pas"
-        android:textAppearance="@style/current_pas"
-        android:background="@drawable/current_pas_text"
-        android:gravity="center_horizontal|center_vertical" />
-
-    <!-- NEW PASSWORD -->
-    <TextView
-        android:id="@+id/new_password"
-        android:layout_width="191dp"
-        android:layout_height="34dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="366dp"
-        android:text="@string/new_password"
-        android:textAppearance="@style/current_pas"
-        android:background="@drawable/current_pas_text"
-        android:gravity="center_horizontal|center_vertical" />
-
-    <!-- CONFIRM PASSWORD -->
-    <TextView
-        android:id="@+id/confirm_pas"
-        android:layout_width="191dp"
-        android:layout_height="34dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="411dp"
-        android:text="@string/confirm_pas"
-        android:textAppearance="@style/current_pas"
-        android:background="@drawable/current_pas_text"
+        android:text="@string/text_phone"
+        android:textAppearance="@style/name"
+        android:background="@drawable/name_button"
         android:gravity="center_horizontal|center_vertical" />
 
     <!-- SAVE -->
-    <TextView
+
+    <ProgressBar
+        android:id="@+id/progressbar_pic2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/save"
+        android:layout_alignLeft="@+id/save"
+        android:layout_alignTop="@+id/save"
+        android:layout_alignEnd="@+id/save"
+        android:layout_alignRight="@+id/save"
+        android:layout_alignBottom="@+id/save"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="-79dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="86dp"
+        android:visibility="invisible" />
+
+    <Button
         android:id="@+id/save"
         android:layout_width="167dp"
         android:layout_height="55dp"

@@ -32,6 +32,7 @@
         app:srcCompat="@drawable/logo"
         android:contentDescription="@string/logo" />
 
+
     <!-- USERNAME --> <!---EMAIL-->
     <EditText
         android:id="@+id/login_email"

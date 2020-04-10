@@ -31,40 +31,21 @@ class SignUpScreen : AppCompatActivity() {
         setContentView(R.layout.sign_up_screen)
         auth = FirebaseAuth.getInstance()
 
-        already_hav.setOnClickListener{
-            val intent = Intent(this,
-                LoginScreen::class.java)
+        already_hav.setOnClickListener {
+            val intent = Intent(
+                this,
+                LoginScreen::class.java
+            )
             startActivity(intent)
         }
 
         register.setOnClickListener {
             signUpUser()
         }
-        select_photo_register.setOnClickListener {
-            val intent  = Intent(Intent.ACTION_PICK)
-            intent.type="image/*"
-            startActivityForResult(intent,0)
-        }
     }
 
-    var selectedPhotoUri: Uri?=null
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if(requestCode == 0 && resultCode == Activity.RESULT_OK && data != null){
-            selectedPhotoUri = data.data
-            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedPhotoUri)
-            val bitmapDrawable = BitmapDrawable(bitmap)
-            select_photo_register.setBackgroundDrawable(bitmapDrawable)
-        }
-    }
 
     private fun signUpUser() {
-        if (username.text.toString().isEmpty()) {
-            username.error = "Please enter username"
-            username.requestFocus()
-            return
-        }
         if (email.text.toString().isEmpty()) {
             email.error = "Please enter email"
             email.requestFocus()
@@ -92,7 +73,7 @@ class SignUpScreen : AppCompatActivity() {
                     user?.sendEmailVerification()
                         ?.addOnCompleteListener{ task ->
                             if(task.isSuccessful){
-                                uploadImageToFirebaseStorage()
+                                saveUserToFirebaseDatabase()
                                 AlertDialog.Builder(this).apply{
                                     setTitle("Please verify your Email Address")
                                     setPositiveButton("Ok"){ _, _ ->
@@ -116,31 +97,17 @@ class SignUpScreen : AppCompatActivity() {
             }
 
     }
-    private fun uploadImageToFirebaseStorage() {
-        if(selectedPhotoUri == null) return
 
-        val filename=UUID.randomUUID().toString()
-        val ref=FirebaseStorage.getInstance().getReference("/images/$filename")
-        ref.putFile(selectedPhotoUri!!)
-            .addOnSuccessListener {
-                Log.d("SignUpScreen", "Successfully uploaded image: ${it.metadata?.path}")
-                ref.downloadUrl.addOnSuccessListener {
-                    saveUserToFirebaseDatabase(it.toString())
-                }
-            }
-    }
-    private fun saveUserToFirebaseDatabase(profileImageUrl: String) {
+    private fun saveUserToFirebaseDatabase() {
         val uid=FirebaseAuth.getInstance().uid ?: ""
         val ref=FirebaseDatabase.getInstance().getReference("/users/$uid")
         val user = User(
             uid,
-            email.text.toString(),
-            username.text.toString(),
-            profileImageUrl
+            email.text.toString()
         )
         ref.setValue(user)
     }
 
 }
 
-class User(val uid:String, val email:String , val name:String, val profileImageUrl:String)
+class User(val uid:String, val email:String )

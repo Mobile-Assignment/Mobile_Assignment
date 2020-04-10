@@ -12,19 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/profile"
-        android:name="com.example.myapplication3.profile.Profile"
-        android:label="Profile"
-        tools:layout="@layout/profile_screen" >
-        <action
-            android:id="@+id/action_profile_to_profileSetting"
-            app:destination="@id/profileSetting" />
-        <action
-            android:id="@+id/action_profile_to_historyList"
-            app:destination="@id/historyList" />
-    </fragment>
-
-    <fragment
         android:id="@+id/postageCalculatorSubmit"
         android:name="com.example.myapplication3.postage.PostageCalculatorSubmit"
         android:label="Post Stage Calculator"
@@ -36,13 +23,22 @@
         android:label="Track Trace"
         tools:layout="@layout/track_trace" />
     <fragment
-        android:id="@+id/profileSetting"
-        android:name="com.example.myapplication3.profile.ProfileSetting"
-        android:label="Profile Setting"
-        tools:layout="@layout/profile_setting" />
+        android:id="@+id/verifyPhoneFragment"
+        android:name="com.example.myapplication3.profile.VerifyPhoneFragment"
+        android:label="Verify Phone"
+        tools:layout="@layout/fragment_verify_phone">
+        <action
+            android:id="@+id/actionPhoneVerified"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/historyList"
-        android:name="com.example.myapplication3.profile.HistoryList"
-        android:label="HistoryList" />
+        android:id="@+id/profileFragment"
+        android:name="com.example.myapplication3.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/actionVerifyPhone"
+            app:destination="@id/verifyPhoneFragment" />
+    </fragment>
 
 </navigation>

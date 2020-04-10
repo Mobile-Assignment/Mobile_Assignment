@@ -66,6 +66,7 @@
     <string name="sender">SENDER</string>
     <string name="status">STATUS</string>
 
+    <string name="text_phone">PHONE NUMBER</string>
     <string name="rules">Rules</string>
     <string name="about">About</string>
 
@@ -75,4 +76,5 @@
     <string name="track_and_trace">Track and Trace</string>
     <string name="profile">Profile</string>
     <string name="setting">Setting</string>
+    <string name="phone">phone</string>
 </resources>
