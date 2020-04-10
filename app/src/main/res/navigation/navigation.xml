@@ -7,26 +7,42 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.myapplication3.HomeFragment"
+        android:name="com.example.myapplication3.home.HomeFragment"
         android:label="Ez Shipping"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/profile"
-        android:name="com.example.myapplication3.Profile"
+        android:name="com.example.myapplication3.profile.Profile"
         android:label="Profile"
-        tools:layout="@layout/profile_screen" />
+        tools:layout="@layout/profile_screen" >
+        <action
+            android:id="@+id/action_profile_to_profileSetting"
+            app:destination="@id/profileSetting" />
+        <action
+            android:id="@+id/action_profile_to_historyList"
+            app:destination="@id/historyList" />
+    </fragment>
 
     <fragment
         android:id="@+id/postageCalculatorSubmit"
-        android:name="com.example.myapplication3.PostageCalculatorSubmit"
+        android:name="com.example.myapplication3.postage.PostageCalculatorSubmit"
         android:label="Post Stage Calculator"
         tools:layout="@layout/postage_calculator_submit"/>
 
     <fragment
         android:id="@+id/track_trace"
-        android:name="com.example.myapplication3.TrackTrace"
+        android:name="com.example.myapplication3.track.TrackTrace"
         android:label="Track Trace"
         tools:layout="@layout/track_trace" />
+    <fragment
+        android:id="@+id/profileSetting"
+        android:name="com.example.myapplication3.profile.ProfileSetting"
+        android:label="Profile Setting"
+        tools:layout="@layout/profile_setting" />
+    <fragment
+        android:id="@+id/historyList"
+        android:name="com.example.myapplication3.profile.HistoryList"
+        android:label="HistoryList" />
 
 </navigation>

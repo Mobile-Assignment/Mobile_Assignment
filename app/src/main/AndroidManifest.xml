@@ -16,11 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginScreen"></activity>
-        <activity android:name=".SignUpScreen"></activity>
-        <activity android:name=".HomeScreen"></activity>
-        <activity android:name=".ResetPassword"></activity>
-        <activity android:name=".PostageCalculator"></activity>
+        <activity android:name=".account.LoginScreen"></activity>
+        <activity android:name=".account.SignUpScreen"></activity>
+        <activity android:name=".home.HomeScreen"></activity>
+        <activity android:name=".account.ResetPassword"></activity>
+        <activity android:name=".postage.PostageCalculator"></activity>
     </application>
 
 </manifest>

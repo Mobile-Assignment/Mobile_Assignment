@@ -8,6 +8,7 @@
     <string name="sign_up">SIGN UP</string>
     <string name="logo_home">logo_home</string>
     <string name="logo">LOGO</string>
+    <string name="account_id">Account ID</string>
     <string name="username">USERNAME</string>
     <string name="password">PASSWORD</string>
     <string name="sign_in">SIGN IN</string>
@@ -36,7 +37,7 @@
     <string name="your_item_h">Your Item Has Been Transferred successfully to [POSTAGE SERVICE]</string>
     <string name="here_is_you">Here is your tracking number:\u000D\n\n(TRACKING NUMBER)</string>
     <string name="name">NAME</string>
-    <string name="account_id">ACCOUNT ID</string>
+    <string name="email_id">EMAIL ID</string>
     <string name="address">Address</string>
     <string name="notification">Notification</string>
     <string name="history">HISTORY</string>

@@ -1,10 +1,11 @@
-package com.example.myapplication3
+package com.example.myapplication3.account
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication3.R
 import com.google.firebase.auth.FirebaseAuth
 
 import kotlinx.android.synthetic.main.reset_password.*
@@ -20,7 +21,8 @@ class ResetPassword : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         login_small.setOnClickListener{
-            val intent = Intent(this,LoginScreen::class.java)
+            val intent = Intent(this,
+                LoginScreen::class.java)
             startActivity(intent)
         }
         reset.setOnClickListener{

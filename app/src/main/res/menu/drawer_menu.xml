@@ -14,12 +14,5 @@
         android:id="@+id/postageCalculatorSubmit"
         android:icon="@drawable/ic_calculator"
         android:title="@string/postage_calculator" />
-    <item
-        android:id="@+id/setting"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/setting" />
-    <item
-        android:id="@+id/logout"
-        android:icon="@drawable/ic_exit"
-        android:title="Logout"/>
+
 </menu>

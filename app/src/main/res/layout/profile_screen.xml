@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication3.Profile">
+    tools:context="com.example.myapplication3.profile.Profile">
 
     <!-- Rect Browse -->
     <View
@@ -19,25 +19,25 @@
 
     <!-- NAME -->
     <TextView
-        android:id="@+id/name"
-        android:layout_width="171dp"
-        android:layout_height="24dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="129dp"
-        android:text="@string/name"
-        android:textAppearance="@style/volumetric_"
-        android:gravity="center_horizontal|center_vertical" />
-
-    <!-- ACCOUNT ID -->
-    <TextView
         android:id="@+id/account_id"
         android:layout_width="208dp"
         android:layout_height="24dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="153dp"
+        android:layout_marginTop="120dp"
         android:text="@string/account_id"
+        android:textAppearance="@style/volumetric_"
+        android:gravity="center_horizontal|center_vertical" />
+
+    <!-- ACCOUNT ID -->
+    <TextView
+        android:id="@+id/email_id"
+        android:layout_width="208dp"
+        android:layout_height="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="153dp"
+        android:text="@string/email_id"
         android:textAppearance="@style/volumetric_"
         android:gravity="center_horizontal|top" />
 
@@ -120,6 +120,7 @@
         android:layout_marginStart="40dp"
         android:contentDescription="@string/icon_address" />
 
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="75dp"
@@ -133,8 +134,8 @@
         android:layout_marginStart="200dp" />
 
     <!-- Ellipse 2 -->
-    <ImageButton
-        android:id="@+id/ellipse_2"
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="98dp"
         android:layout_height="84dp"
         android:layout_centerHorizontal="true"

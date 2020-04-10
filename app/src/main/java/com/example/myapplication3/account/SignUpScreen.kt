@@ -1,4 +1,4 @@
-package com.example.myapplication3
+package com.example.myapplication3.account
 
 import android.app.Activity
 import android.content.Intent
@@ -9,7 +9,11 @@ import android.provider.MediaStore
 import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication3.R
+import com.example.myapplication3.util.login
+import com.example.myapplication3.util.logout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -28,7 +32,8 @@ class SignUpScreen : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         already_hav.setOnClickListener{
-            val intent = Intent(this,LoginScreen::class.java)
+            val intent = Intent(this,
+                LoginScreen::class.java)
             startActivity(intent)
         }
 
@@ -88,10 +93,19 @@ class SignUpScreen : AppCompatActivity() {
                         ?.addOnCompleteListener{ task ->
                             if(task.isSuccessful){
                                 uploadImageToFirebaseStorage()
-                                Toast.makeText(baseContext, "Please verify your Email.",
+                                AlertDialog.Builder(this).apply{
+                                    setTitle("Please verify your Email Address")
+                                    setPositiveButton("Ok"){ _, _ ->
+                                        FirebaseAuth.getInstance().signOut()
+                                        login()
+                                    }
+                                    /*setNegativeButton("Cancel"){ _, _ ->}*/
+                                }.create().show()
+                                /*Toast.makeText(baseContext, "Please verify your Email.",
                                     Toast.LENGTH_SHORT).show()
-                                startActivity(Intent(this,LoginScreen::class.java))
-                                finish()
+                                startActivity(Intent(this,
+                                    LoginScreen::class.java))
+                                finish()*/
                             }
                         }
 
@@ -118,10 +132,15 @@ class SignUpScreen : AppCompatActivity() {
     private fun saveUserToFirebaseDatabase(profileImageUrl: String) {
         val uid=FirebaseAuth.getInstance().uid ?: ""
         val ref=FirebaseDatabase.getInstance().getReference("/users/$uid")
-        val user = User(uid, email.text.toString(),username.text.toString(), profileImageUrl)
+        val user = User(
+            uid,
+            email.text.toString(),
+            username.text.toString(),
+            profileImageUrl
+        )
         ref.setValue(user)
     }
 
 }
 
-class User(val uid:String, val email:String , val username:String, val profileImageUrl:String)
+class User(val uid:String, val email:String , val name:String, val profileImageUrl:String)
