@@ -44,8 +44,7 @@ class ProfileFragment : Fragment() {
                 .into(image_view)
             name.setText(user.displayName)
             email_id.text = user.email
-            text_phone.text =
-                if (user.phoneNumber.isNullOrEmpty()) "Add Number" else user.phoneNumber
+            text_phone.text = if (user.phoneNumber.isNullOrEmpty()) "Add Number" else user.phoneNumber
 
         }
         image_view.setOnClickListener {
@@ -81,6 +80,10 @@ class ProfileFragment : Fragment() {
         }
         text_phone.setOnClickListener{
             val action = ProfileFragmentDirections.actionVerifyPhone()
+            Navigation.findNavController(it).navigate(action)
+        }
+        email_id.setOnClickListener{
+            val action = ProfileFragmentDirections.actionUpdateEmail()
             Navigation.findNavController(it).navigate(action)
         }
 
