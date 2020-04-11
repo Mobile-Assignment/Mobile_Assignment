@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication3.postage.PostageCalculatorSubmit">
+    tools:context="com.example.myapplication3.postage.PostageFragment">
 
 
     <!-- LENGTH (CM) -->
@@ -39,7 +39,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="269dp"
-       android:hint="@string/width_cm_"
+        android:hint="@string/width_cm_"
         android:textAppearance="@style/length_cm_"
         android:background="@drawable/width"
         android:inputType="number"

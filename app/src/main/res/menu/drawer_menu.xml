@@ -11,7 +11,7 @@
         android:icon="@drawable/ic_track_trace"
         android:title="@string/track_and_trace" />
     <item
-        android:id="@+id/postageCalculatorSubmit"
+        android:id="@+id/postageFragment"
         android:icon="@drawable/ic_calculator"
         android:title="@string/postage_calculator" />
 

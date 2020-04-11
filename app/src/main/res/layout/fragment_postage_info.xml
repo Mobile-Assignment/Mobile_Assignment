@@ -5,16 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".postage.PostageCalculator">
+    tools:context="com.example.myapplication3.postage.PostageInfoFragment">
 
     <!-- VOLUMETRIC (CM^3) -->
-    <TextView
+    <Button
         android:id="@+id/volumetric_"
-        android:layout_width="208dp"
-        android:layout_height="24dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="40dp"
         android:text="@string/volumetric_"
         android:textAppearance="@style/volumetric_"
         android:gravity="center_horizontal|center_vertical" />
@@ -26,36 +26,15 @@
         android:layout_height="24dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="74dp"
-        android:text="@string/volumetric_"
+        android:layout_marginTop="100dp"
+        android:text="@string/volumetric"
         android:background="@drawable/volumetric"
         android:textAppearance="@style/volumetric"
         android:gravity="center_horizontal|center_vertical" />
 
     <!-- WEIGHT (KG) -->
-    <TextView
-        android:id="@+id/weight_kg_"
-        android:layout_width="208dp"
-        android:layout_height="24dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="107dp"
-        android:text="@string/weight_kg_"
-        android:textAppearance="@style/volumetric_"
-        android:gravity="center_horizontal|center_vertical" />
 
     <!-- WEIGHT (KG) -->
-    <TextView
-        android:id="@+id/weight_kg"
-        android:layout_width="208dp"
-        android:layout_height="24dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="134dp"
-        android:text="@string/weight_kg_"
-        android:background="@drawable/weight_kg"
-        android:textAppearance="@style/volumetric"
-        android:gravity="center_horizontal|center_vertical" />
 
     <!-- Rect Browse -->
     <View

@@ -21,8 +21,9 @@
     <string name="reset">RESET</string>
     <string name="track_trace">TRACK AND TRACE</string>
     <string name="postage_cal">POSTAGE CALCULATOR</string>
-    <string name="volumetric_">VOLUMETRIC (CM^3)</string>
+    <string name="volumetric_">SHOW</string>
     <string name="weight_kg_">WEIGHT (KG)</string>
+    <string name="volumetric">VOLUMETRIC (KG)</string>
     <string name="recipient_n">RECIPIENT NAME</string>
     <string name="street_address">STREET ADDRESS</string>
     <string name="city_town">CITY/TOWN</string>

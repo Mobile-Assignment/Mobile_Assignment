@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/postageCalculatorSubmit"
-        android:name="com.example.myapplication3.postage.PostageCalculatorSubmit"
-        android:label="Post Stage Calculator"
-        tools:layout="@layout/postage_calculator_submit"/>
-
-    <fragment
         android:id="@+id/track_trace"
         android:name="com.example.myapplication3.track.TrackTrace"
         android:label="Track Trace"
@@ -52,5 +46,19 @@
             android:id="@+id/actionEmailUpdated"
             app:destination="@id/profileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/postageFragment"
+        android:name="com.example.myapplication3.postage.PostageFragment"
+        android:label="Postage Calculator"
+        tools:layout="@layout/fragment_postage" >
+        <action
+            android:id="@+id/actionSubmitVolumetric"
+            app:destination="@id/postageInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postageInfoFragment"
+        android:name="com.example.myapplication3.postage.PostageInfoFragment"
+        android:label="Postage Info"
+        tools:layout="@layout/fragment_postage_info" />
 
 </navigation>

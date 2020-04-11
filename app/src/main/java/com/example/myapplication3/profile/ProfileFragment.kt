@@ -19,9 +19,6 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.fragment_profile.*
-import kotlinx.android.synthetic.main.fragment_profile.image_view
-import kotlinx.android.synthetic.main.fragment_profile.progressbar_pic
-import kotlinx.android.synthetic.main.fragment_verify_phone.*
 import java.io.ByteArrayOutputStream
 
 class ProfileFragment : Fragment() {
