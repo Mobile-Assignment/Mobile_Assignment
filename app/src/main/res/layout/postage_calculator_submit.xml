@@ -17,50 +17,63 @@
         android:layout_marginBottom="100dp"
         android:background="@drawable/postage_box" />
 
-    <TextView
+    <EditText
         android:id="@+id/length_cm_"
         android:layout_width="335dp"
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="221dp"
-        android:text="@string/length_cm_"
+        android:hint="@string/length_cm_"
         android:textAppearance="@style/length_cm_"
         android:background="@drawable/length"
+        android:inputType="number"
         android:gravity="center_horizontal|center_vertical"
         />
 
     <!-- WIDTH (CM) -->
-    <TextView
+    <EditText
         android:id="@+id/width_cm_"
         android:layout_width="334dp"
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="269dp"
-        android:text="@string/width_cm_"
+       android:hint="@string/width_cm_"
         android:textAppearance="@style/length_cm_"
         android:background="@drawable/width"
+        android:inputType="number"
         android:gravity="center_horizontal|center_vertical"
         />
 
     <!-- HEIGHT (CM) -->
-    <TextView
+    <EditText
         android:id="@+id/height_cm_"
         android:layout_width="334dp"
         android:layout_height="36dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="315dp"
-        android:text="@string/height_cm_"
+        android:hint="@string/height_cm_"
         android:textAppearance="@style/length_cm_"
         android:background="@drawable/width"
+        android:inputType="number"
         android:gravity="center_horizontal|center_vertical"
         />
 
-    <!-- SUBMIT -->
+    <!-- Result -->
     <TextView
-        android:id="@+id/submit"
+        android:id="@+id/volumetric_result"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="365dp"
+        android:text="@string/result" />
+
+    <!-- SUBMIT -->
+    <Button
+        android:id="@+id/count"
         android:layout_width="317dp"
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
@@ -71,5 +84,6 @@
         android:background="@drawable/submit_button"
         android:gravity="center_horizontal|center_vertical"
         />
+
 
 </RelativeLayout>

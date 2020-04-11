@@ -77,4 +77,6 @@
     <string name="profile">Profile</string>
     <string name="setting">Setting</string>
     <string name="phone">phone</string>
+    <string name="result">Result</string>
+
 </resources>
