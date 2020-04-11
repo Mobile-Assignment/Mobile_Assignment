@@ -27,16 +27,13 @@ class PostageInfoFragment : Fragment() {
 
         volumetric_.setOnClickListener{
         val uid = FirebaseAuth.getInstance().currentUser!!.uid
-
         val rootRef = FirebaseDatabase.getInstance().reference
         val uidRef = rootRef.child("postage").child(uid)
         val eventListener: ValueEventListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val propNameTxt = dataSnapshot.child("volumetric").value.toString()
                 volumetric.text = propNameTxt
-
             }
-
             override fun onCancelled(databaseError: DatabaseError) {}
         }
         uidRef.addListenerForSingleValueEvent(eventListener)
