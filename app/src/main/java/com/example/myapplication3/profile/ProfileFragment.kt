@@ -16,8 +16,12 @@ import com.example.myapplication3.R
 import com.example.myapplication3.util.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.fragment_profile.image_view
+import kotlinx.android.synthetic.main.fragment_profile.progressbar_pic
+import kotlinx.android.synthetic.main.fragment_verify_phone.*
 import java.io.ByteArrayOutputStream
 
 class ProfileFragment : Fragment() {
@@ -46,6 +50,12 @@ class ProfileFragment : Fragment() {
             email_id.text = user.email
             text_phone.text = if (user.phoneNumber.isNullOrEmpty()) "Add Number" else user.phoneNumber
 
+            if(user.isEmailVerified){
+                text_not_verified.visibility=View.INVISIBLE
+            }else{
+                text_not_verified.visibility=View.VISIBLE
+            }
+
         }
         image_view.setOnClickListener {
             takePictureIntent()
@@ -73,10 +83,12 @@ class ProfileFragment : Fragment() {
                     progressbar_pic2.visibility = View.INVISIBLE
                     if(task.isSuccessful){
                         context?.toast("Profile Updated")
+
                     }else {
                         context?.toast(task.exception?.message!!)
                     }
                 }
+            saveToDatabase()
         }
         text_phone.setOnClickListener{
             val action = ProfileFragmentDirections.actionVerifyPhone()
@@ -85,6 +97,16 @@ class ProfileFragment : Fragment() {
         email_id.setOnClickListener{
             val action = ProfileFragmentDirections.actionUpdateEmail()
             Navigation.findNavController(it).navigate(action)
+        }
+        text_not_verified.setOnClickListener{
+            currentUser?.sendEmailVerification()
+                ?.addOnCompleteListener{
+                    if(it.isSuccessful){
+                        context?.toast("Verification Email Sent and press Save before logout")
+                    }else{
+                        context?.toast(it.exception?.message!!)
+                    }
+                }
         }
 
     }
@@ -132,4 +154,19 @@ class ProfileFragment : Fragment() {
             }
         }
     }
+    private fun saveToDatabase() {
+        val uid=FirebaseAuth.getInstance().uid ?: ""
+        val ref= FirebaseDatabase.getInstance().getReference("/users/$uid")
+        val user = User(
+            uid,
+            name.text.toString(),
+            text_phone.text.toString(),
+            email_id.text.toString()
+        )
+        ref.setValue(user)
+    }
+
 }
+
+
+class User(val uid:String, val name:String, val phone:String, val email_id:String )

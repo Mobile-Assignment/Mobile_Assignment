@@ -60,6 +60,22 @@
         android:background="@drawable/name_button"
         android:gravity="center_horizontal|center_vertical" />
 
+    <TextView
+        android:id="@+id/text_not_verified"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/email_id"
+        android:layout_alignEnd="@+id/email_id"
+        android:layout_alignBottom="@+id/email_id"
+        android:layout_gravity="right"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="-26dp"
+        android:text="Not Verified (Click to Verify)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="invisible" />
+
     <EditText
         android:id="@+id/name"
         android:layout_width="191dp"
