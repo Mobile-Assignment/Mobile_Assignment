@@ -37,8 +37,8 @@ class PostageFragment : Fragment() {
     }
 
     private fun calculation(){
-        volumetric_result.text = "Volumetric Weight: " + (length_cm_.text.toString().toInt() * width_cm_.text.toString()
-                .toInt() * height_cm_.text.toString().toInt() / 5000) +"kg"
+        volumetric_result.text = "Volumetric Weight: " + (length_cm_.text.toString().toDouble() * width_cm_.text.toString()
+                .toDouble() * height_cm_.text.toString().toDouble() / 5000) +"kg"
     }
     private fun saveToDatabase() {
         val uid=FirebaseAuth.getInstance().uid ?: ""
