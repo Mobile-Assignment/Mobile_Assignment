@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">EZ Shipping</string>
     <string name="ez_shipping">EZ SHIPPING</string>
     <string name="login">LOGIN</string>
@@ -74,6 +75,7 @@
     <string name="text_phone">PHONE NUMBER</string>
     <string name="rules">Rules</string>
     <string name="about">About</string>
+    <string name="spinner">Select Postage Service</string>
 
     <string name="postage_show"> SHOW POSTAGE COST 1KG/RM0.80</string>
     <!--<string name="postage_cost"> POSTAGE COST </string>-->

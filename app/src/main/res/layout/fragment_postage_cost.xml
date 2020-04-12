@@ -40,6 +40,7 @@
         android:background="@drawable/volumetric"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/volumetric"
+        android:inputType="number"
         android:textAppearance="@style/volumetric" />
 
     <EditText
@@ -51,7 +52,7 @@
         android:layout_marginTop="110dp"
         android:hint="@string/input_volume"
         android:autofillHints="@string/input_volume"
-        android:background="@drawable/recipient"
+        android:background="@drawable/length"
         android:textAppearance="@style/recipient_n"
         android:gravity="center_horizontal|center_vertical" />
 
@@ -68,6 +69,36 @@
         android:background="@drawable/postage_button"
         android:gravity="center_horizontal|center_vertical"
         />
+    <TextView
+        android:id="@+id/storename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+    <TextView
+        android:id="@+id/storenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+    <TextView
+        android:id="@+id/storecitytown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+    <TextView
+        android:id="@+id/storestate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+    <TextView
+        android:id="@+id/storestreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+    <TextView
+        android:id="@+id/storepostcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
 <!--    <TextView
         android:id="@+id/cost_result"
         android:layout_width="317dp"
@@ -90,21 +121,6 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="1dp" />
 
-    <!-- POSTAGE SERVICE -->
-    <TextView
-        android:id="@+id/postage_ser"
-        android:layout_width="216dp"
-        android:layout_height="33dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="411dp"
-        android:text="@string/postage_ser"
-        android:textAppearance="@style/postage_ser"
-        android:background="@drawable/postage_ser_button"
-        android:gravity="center_horizontal|center_vertical" />
-
-
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -113,13 +129,38 @@
         android:contentDescription="@string/qr_code"
         app:srcCompat="@drawable/qr_code" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:layout_marginTop="420dp"
-        android:layout_marginLeft="180dp"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/spinner"
+        android:textAppearance="@style/sign_in"
+        android:layout_marginTop="420dp"/>
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="208dp"
+        android:layout_height="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="470dp"
+        android:textAppearance="@style/volumetric"
+        android:background="@drawable/postage_button"
+        android:gravity="center_horizontal|center_vertical"
+        />
+
+    <Button
+        android:id="@+id/saveToTrack"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="520dp"
+        android:text="@string/save_as_dra"
+        android:textAppearance="@style/sign_in"
+        android:background="@drawable/save_draft"
+        android:gravity="center_horizontal|center_vertical" />
 
 
 </RelativeLayout>

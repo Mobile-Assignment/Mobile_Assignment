@@ -84,7 +84,7 @@ class PostageInfoFragment : Fragment() {
         private fun saveToDatabase() {
             val uid=FirebaseAuth.getInstance().uid ?: ""
             val ref= FirebaseDatabase.getInstance().getReference("/postage/$uid")
-            val user = mUser(
+            val user = MUser(
                 uid,
                 volumetric.text.toString(),
                 phone_number.text.toString(),
@@ -97,5 +97,5 @@ class PostageInfoFragment : Fragment() {
             ref.setValue(user)
         }
 }
-class mUser(val uid:String, val volumetric:String, val phone:String, val name:String, val city:String,
+class MUser(val uid:String, val volumetric:String, val phone:String, val name:String, val city:String,
            val state:String, val postcode: String, val street:String)
