@@ -12,7 +12,7 @@
     <View
         android:id="@+id/rect_browse"
         android:layout_width="match_parent"
-        android:layout_height="530dp"
+        android:layout_height="500dp"
         android:background="@drawable/rect_profile_set" />
 
     <!-- Ellipse 1 -->
@@ -125,11 +125,11 @@
 
     <Button
         android:id="@+id/save"
-        android:layout_width="167dp"
-        android:layout_height="55dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="505dp"
+        android:layout_marginTop="470dp"
         android:text="@string/save"
         android:textAppearance="@style/save"
         android:background="@drawable/save_button"
