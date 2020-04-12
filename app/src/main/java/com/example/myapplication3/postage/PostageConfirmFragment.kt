@@ -13,6 +13,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.integration.android.IntentIntegrator
+import com.journeyapps.barcodescanner.BarcodeEncoder
 import kotlinx.android.synthetic.main.fragment_postage_confirm.*
 import kotlinx.android.synthetic.main.fragment_postage_confirm.storecitytown
 import kotlinx.android.synthetic.main.fragment_postage_confirm.storepostcode
@@ -81,9 +84,18 @@ class PostageConfirmFragment : Fragment() {
 
         generatenumber.setOnClickListener {
             getRandomString(16)
+            try{
+                val encoder=BarcodeEncoder()
+                val bitmap = encoder.encodeBitmap(here_is_you.text.toString(), BarcodeFormat.QR_CODE,
+                500,500)
+                image_qr.setImageBitmap(bitmap)
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
             saveToDatabase()
         }
     }
+
     private fun getRandomString(sizeOfRandomString: Int): String {
         val random = Random()
         val sb = StringBuilder(sizeOfRandomString)
@@ -110,6 +122,7 @@ class PostageConfirmFragment : Fragment() {
         )
         ref.setValue(user)
     }
+
 
 }
 class EUser(val uid:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,

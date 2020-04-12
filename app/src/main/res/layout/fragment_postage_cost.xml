@@ -40,7 +40,6 @@
         android:background="@drawable/volumetric"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/volumetric"
-        android:inputType="number"
         android:textAppearance="@style/volumetric" />
 
     <EditText
@@ -108,7 +107,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="180dp" />-->
        <!-- android:text="Result"/>-->
-
     <!-- Rect Browse -->
     <View
         android:id="@+id/rect_browse"
@@ -121,15 +119,16 @@
         android:background="@drawable/rect_postage"
         android:layout_alignParentStart="true"
         android:layout_marginStart="1dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="142dp"
-        android:layout_marginTop="263dp"
-        android:contentDescription="@string/qr_code"
-        app:srcCompat="@drawable/qr_code" />
-
+    <TextView
+        android:layout_width="308dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="250dp"
+        android:text="SELECT POSTAGE SERVICE"
+        android:textAppearance="@style/sign_in"
+        android:gravity="center_horizontal|center_vertical"
+        />
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="208dp"
@@ -137,7 +136,7 @@
         android:layout_centerHorizontal="true"
         android:text="@string/spinner"
         android:textAppearance="@style/sign_in"
-        android:layout_marginTop="420dp"/>
+        android:layout_marginTop="300dp"/>
 
     <TextView
         android:id="@+id/text_result"
@@ -145,7 +144,7 @@
         android:layout_height="24dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="470dp"
+        android:layout_marginTop="360dp"
         android:textAppearance="@style/volumetric"
         android:background="@drawable/postage_button"
         android:gravity="center_horizontal|center_vertical"
@@ -157,10 +156,10 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="430dp"
         android:text="@string/save_as_dra"
         android:textAppearance="@style/submit"
-        android:background="@drawable/submit_button"
+        android:background="@drawable/save_button"
         android:gravity="center_horizontal|center_vertical" />
 
 
