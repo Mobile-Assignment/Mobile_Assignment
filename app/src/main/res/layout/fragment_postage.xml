@@ -9,12 +9,22 @@
 
 
     <!-- LENGTH (CM) -->
+    <TextView
+        android:layout_width="308dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:text="ENTER ALL THE DETAILS"
+        android:textAppearance="@style/successful"
+        android:gravity="center_horizontal|center_vertical"
+        />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginBottom="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
         android:background="@drawable/postage_box" />
 
     <EditText
@@ -23,7 +33,7 @@
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="221dp"
+        android:layout_marginTop="250dp"
         android:hint="@string/length_cm_"
         android:textAppearance="@style/length_cm_"
         android:background="@drawable/length"
@@ -38,7 +48,7 @@
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="269dp"
+        android:layout_marginTop="300dp"
         android:hint="@string/width_cm_"
         android:textAppearance="@style/length_cm_"
         android:background="@drawable/width"
@@ -53,7 +63,7 @@
         android:layout_height="36dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="315dp"
+        android:layout_marginTop="350dp"
         android:hint="@string/height_cm_"
         android:textAppearance="@style/length_cm_"
         android:background="@drawable/width"
@@ -68,14 +78,15 @@
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="365dp" />
-        <!--android:text="@string/result" />-->
+        android:layout_marginTop="365dp"
+        android:visibility="invisible" />
+
 
     <!-- SUBMIT -->
     <Button
         android:id="@+id/count"
-        android:layout_width="317dp"
-        android:layout_height="35dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="411dp"

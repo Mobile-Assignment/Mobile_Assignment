@@ -78,8 +78,8 @@
     <string name="spinner">Select Postage Service</string>
 
     <string name="postage_show"> SHOW POSTAGE COST 1KG/RM0.80</string>
-    <!--<string name="postage_cost"> POSTAGE COST </string>-->
     <string name="cost_result">POSTAGE COST</string>
+    <string name="generatenumber">Generate Tracking Number</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
