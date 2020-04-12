@@ -44,10 +44,22 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="173dp"
+        android:layout_marginTop="140dp"
         android:background="@drawable/rect_view" />
 
     <!-- RECIPIENT NAME -->
+    <Button
+        android:id="@+id/showinfo"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="144dp"
+        android:text="@string/showinfo"
+        android:textAppearance="@style/volumetric_"
+        android:gravity="center_horizontal|center_vertical" />
+
+
     <TextView
         android:id="@+id/recipient_n"
         android:layout_width="328dp"
@@ -56,77 +68,82 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="200dp"
         android:text="@string/recipient_n"
-        android:textAppearance="@style/recipient_n"
-        android:background="@drawable/recipient"
+        android:textAppearance="@style/sign_in"
+        android:background="@drawable/rect_view"
         android:gravity="center_horizontal|center_vertical" />
 
-    <!-- STREET ADDRESS -->
-    <TextView
-        android:id="@+id/street_address"
-        android:layout_width="328dp"
-        android:layout_height="34dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="249dp"
-        android:text="@string/street_address"
-        android:background="@drawable/recipient"
-        android:textAppearance="@style/recipient_n"
-        android:gravity="center_horizontal|center_vertical" />
-
-    <!-- CITY/TOWN -->
-    <TextView
-        android:id="@+id/city_town"
-        android:layout_width="328dp"
-        android:layout_height="34dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="298dp"
-        android:text="@string/city_town"
-        android:textAppearance="@style/recipient_n"
-        android:background="@drawable/recipient"
-        android:gravity="center_horizontal|center_vertical" />
-
-    <!-- STATE -->
-    <TextView
-        android:id="@+id/state"
-        android:layout_width="328dp"
-        android:layout_height="34dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="347dp"
-        android:text="@string/state"
-        android:textAppearance="@style/recipient_n"
-        android:background="@drawable/recipient"
-        android:gravity="center_horizontal|center_vertical" />
-
-    <!-- POSTCODE -->
-    <TextView
-        android:id="@+id/postcode"
-        android:layout_width="328dp"
-        android:layout_height="34dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="396dp"
-        android:text="@string/postcode"
-        android:textAppearance="@style/recipient_n"
-        android:background="@drawable/recipient"
-        android:gravity="center_horizontal|center_vertical" />
-
-    <!-- PHONE NUMBER -->
+    <!--PHONE NUMBER-->
     <TextView
         android:id="@+id/phone_number"
         android:layout_width="328dp"
         android:layout_height="34dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="445dp"
+        android:layout_marginTop="249dp"
         android:text="@string/phone_number"
+        android:textAppearance="@style/sign_in"
+        android:background="@drawable/rect_view"
+        android:gravity="center_horizontal|center_vertical" />
+
+    <!-- STREET ADDRESS -->
+    <EditText
+        android:id="@+id/street_address"
+        android:layout_width="328dp"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="298dp"
+        android:hint="@string/street_address"
+        android:autofillHints="@string/street_address"
+        android:background="@drawable/recipient"
+        android:textAppearance="@style/recipient_n"
+        android:gravity="center_horizontal|center_vertical" />
+
+    <!-- CITY/TOWN -->
+    <EditText
+        android:id="@+id/city_town"
+        android:layout_width="328dp"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="347dp"
+        android:hint="@string/city_town"
+        android:autofillHints="@string/city_town"
         android:textAppearance="@style/recipient_n"
         android:background="@drawable/recipient"
         android:gravity="center_horizontal|center_vertical" />
 
+    <!-- STATE -->
+    <EditText
+        android:id="@+id/stateinfo"
+        android:layout_width="328dp"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="396dp"
+        android:hint="@string/stateinfo"
+        android:autofillHints="@string/stateinfo"
+        android:textAppearance="@style/recipient_n"
+        android:background="@drawable/recipient"
+        android:gravity="center_horizontal|center_vertical" />
+
+    <!-- POSTCODE -->
+    <EditText
+        android:id="@+id/postcodeinfo"
+        android:layout_width="328dp"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="445dp"
+        android:hint="@string/postcodeinfo"
+        android:autofillHints="@string/postcodeinfo"
+        android:textAppearance="@style/recipient_n"
+        android:background="@drawable/recipient"
+        android:gravity="center_horizontal|center_vertical" />
+
+
     <!-- SAVE AS DRAFT -->
-    <TextView
+    <Button
         android:id="@+id/save_as_dra"
         android:layout_width="317dp"
         android:layout_height="35dp"

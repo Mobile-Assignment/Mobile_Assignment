@@ -68,8 +68,8 @@
         android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="365dp"
-        android:text="@string/result" />
+        android:layout_marginTop="365dp" />
+        <!--android:text="@string/result" />-->
 
     <!-- SUBMIT -->
     <Button

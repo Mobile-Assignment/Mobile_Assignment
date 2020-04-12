@@ -59,6 +59,15 @@
         android:id="@+id/postageInfoFragment"
         android:name="com.example.myapplication3.postage.PostageInfoFragment"
         android:label="Postage Info"
-        tools:layout="@layout/fragment_postage_info" />
+        tools:layout="@layout/fragment_postage_info" >
+        <action
+            android:id="@+id/actionPostageCost"
+            app:destination="@id/postageCostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postageCostFragment"
+        android:name="com.example.myapplication3.postage.PostageCostFragment"
+        android:label="Postage Cost"
+        tools:layout="@layout/fragment_postage_cost" />
 
 </navigation>
