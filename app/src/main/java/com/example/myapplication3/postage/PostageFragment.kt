@@ -1,5 +1,6 @@
 package com.example.myapplication3.postage
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,6 +37,7 @@ class PostageFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun calculation(){
         volumetric_result.text = "Volumetric Weight: " + (length_cm_.text.toString().toDouble() * width_cm_.text.toString()
                 .toDouble() * height_cm_.text.toString().toDouble() / 5000) +"kg"

@@ -8,30 +8,74 @@
     tools:context="com.example.myapplication3.postage.PostageCostFragment">
 
     <!-- POSTAGE COST -->
-    <TextView
-        android:id="@+id/postage_cos"
+ <!--   <TextView
+        android:id="@+id/postage_show2"
         android:layout_width="208dp"
         android:layout_height="24dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="73dp"
-        android:text="@string/postage_cos"
+        android:layout_marginTop="20dp"
+        android:text="@string/postage_show"
         android:textAppearance="@style/volumetric_"
+        android:gravity="center_horizontal|center_vertical" />-->
+
+    <Button
+        android:id="@+id/postage_show"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/postage_show"
+        android:textAppearance="@style/volumetric_"
+        android:gravity="center_horizontal|center_vertical" />
+
+    <TextView
+        android:id="@+id/volumetric"
+        android:layout_width="208dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/volumetric"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/volumetric"
+        android:textAppearance="@style/volumetric" />
+
+    <EditText
+        android:id="@+id/input_volume"
+        android:layout_width="250dp"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:hint="@string/input_volume"
+        android:autofillHints="@string/input_volume"
+        android:background="@drawable/recipient"
+        android:textAppearance="@style/recipient_n"
         android:gravity="center_horizontal|center_vertical" />
 
     <!-- POSTAGE COST -->
     <TextView
-        android:id="@+id/postage_button"
+        android:id="@+id/cost_result"
         android:layout_width="208dp"
         android:layout_height="24dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="114dp"
-        android:text="@string/postage_cos"
+        android:layout_marginTop="150dp"
+        android:text="@string/cost_result"
         android:textAppearance="@style/volumetric"
         android:background="@drawable/postage_button"
         android:gravity="center_horizontal|center_vertical"
         />
+<!--    <TextView
+        android:id="@+id/cost_result"
+        android:layout_width="317dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="180dp" />-->
+       <!-- android:text="Result"/>-->
 
     <!-- Rect Browse -->
     <View

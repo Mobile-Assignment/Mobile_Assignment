@@ -8,9 +8,9 @@
     tools:context="com.example.myapplication3.postage.PostageInfoFragment">
 
     <!-- VOLUMETRIC (CM^3) -->
-    <Button
+    <TextView
         android:id="@+id/volumetric_"
-        android:layout_width="150dp"
+        android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
@@ -48,7 +48,7 @@
         android:background="@drawable/rect_view" />
 
     <!-- RECIPIENT NAME -->
-    <Button
+    <TextView
         android:id="@+id/showinfo"
         android:layout_width="150dp"
         android:layout_height="50dp"

@@ -99,7 +99,7 @@ class ProfileFragment : Fragment() {
             currentUser?.sendEmailVerification()
                 ?.addOnCompleteListener{
                     if(it.isSuccessful){
-                        context?.toast("Verification Email Sent and press Save before logout")
+                        context?.toast("Verification Email Sent")
                     }else{
                         context?.toast(it.exception?.message!!)
                     }

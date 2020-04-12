@@ -26,20 +26,20 @@ class PostageInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        volumetric_.setOnClickListener{
-        val uid = FirebaseAuth.getInstance().currentUser!!.uid
-        val rootRef = FirebaseDatabase.getInstance().reference
-        val uidRef = rootRef.child("postage").child(uid)
-        val eventListener: ValueEventListener = object : ValueEventListener {
+
+        val suid = FirebaseAuth.getInstance().currentUser!!.uid
+        val srootRef = FirebaseDatabase.getInstance().reference
+        val suidRef = srootRef.child("postage").child(suid)
+        val seventListener: ValueEventListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val propNameTxt = dataSnapshot.child("volumetric").value.toString()
                 volumetric.text = propNameTxt
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         }
-        uidRef.addListenerForSingleValueEvent(eventListener)
-        }
-        showinfo.setOnClickListener {
+        suidRef.addListenerForSingleValueEvent(seventListener)
+
+
                 val uid = FirebaseAuth.getInstance().currentUser!!.uid
                 val rootRef = FirebaseDatabase.getInstance().reference
                 val uidRef = rootRef.child("users").child(uid)
@@ -53,12 +53,8 @@ class PostageInfoFragment : Fragment() {
                     override fun onCancelled(databaseError: DatabaseError) {}
                 }
                 uidRef.addListenerForSingleValueEvent(eventListener)
-            }
+
             save_as_dra.setOnClickListener {
-/*                val city = city_town.text.toString().trim()
-                val  state = stateinfo.text.toString().trim()
-                val postcode = postcodeinfo.text.toString().trim()
-                val streetadd= street_address.text.toString().trim()*/
                 if(street_address.text.toString().trim().isEmpty()){
                     street_address.error="Stress Address Required"
                     street_address.requestFocus()
