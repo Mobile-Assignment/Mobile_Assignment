@@ -40,7 +40,7 @@ class PostageInfoFragment : Fragment() {
         suidRef.addListenerForSingleValueEvent(seventListener)
 
 
-                val uid = FirebaseAuth.getInstance().currentUser!!.uid
+/*                val uid = FirebaseAuth.getInstance().currentUser!!.uid
                 val rootRef = FirebaseDatabase.getInstance().reference
                 val uidRef = rootRef.child("users").child(uid)
                 val eventListener: ValueEventListener = object : ValueEventListener {
@@ -52,9 +52,19 @@ class PostageInfoFragment : Fragment() {
                     }
                     override fun onCancelled(databaseError: DatabaseError) {}
                 }
-                uidRef.addListenerForSingleValueEvent(eventListener)
+                uidRef.addListenerForSingleValueEvent(eventListener)*/
 
             save_as_dra.setOnClickListener {
+                if(recipient_n.text.toString().trim().isEmpty()){
+                    recipient_n.error="Recipient Name Required"
+                    recipient_n.requestFocus()
+                    return@setOnClickListener
+                }
+                if(phone_number.text.toString().trim().isEmpty()) {
+                    phone_number.error="Recipient Phone Number Required"
+                    phone_number.requestFocus()
+                    return@setOnClickListener
+                }
                 if(street_address.text.toString().trim().isEmpty()){
                     street_address.error="Stress Address Required"
                     street_address.requestFocus()
@@ -97,5 +107,5 @@ class PostageInfoFragment : Fragment() {
             ref.setValue(user)
         }
 }
-class MUser(val uid:String, val volumetric:String, val phone:String, val name:String, val city:String,
+class MUser(val uid:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
            val state:String, val postcode: String, val street:String)

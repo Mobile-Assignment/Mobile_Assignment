@@ -64,18 +64,22 @@ class PostageCostFragment : Fragment() {
                     val propState = dataSnapshot.child("state").value.toString()
                     val propStreet = dataSnapshot.child("street").value.toString()
                     val propPostcode = dataSnapshot.child("postcode").value.toString()
+                    val propRename = dataSnapshot.child("recipientname").value.toString()
+                    val propRephone = dataSnapshot.child("recipientphone").value.toString()
                     volumetric.text = propNameTxt
                     storecitytown.text = propCity
                     storestate.text= propState
                     storestreet.text = propStreet
                     storepostcode.text=propPostcode
+                    storename.text=propRename
+                    storenumber.text=propRephone
 
                 }
                 override fun onCancelled(databaseError: DatabaseError) {}
             }
             suidRef.addListenerForSingleValueEvent(seventListener)
 
-        val uid = FirebaseAuth.getInstance().currentUser!!.uid
+ /*       val uid = FirebaseAuth.getInstance().currentUser!!.uid
         val rootRef = FirebaseDatabase.getInstance().reference
         val uidRef = rootRef.child("users").child(uid)
         val eventListener: ValueEventListener = object : ValueEventListener {
@@ -87,7 +91,7 @@ class PostageCostFragment : Fragment() {
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         }
-        uidRef.addListenerForSingleValueEvent(eventListener)
+        uidRef.addListenerForSingleValueEvent(eventListener)*/
 
         postage_show.setOnClickListener {
             if (input_volume.text.toString().trim().isEmpty()) {
@@ -129,5 +133,5 @@ class PostageCostFragment : Fragment() {
 
 
 }
-class TUser(val uid:String, val volumetric:String, val phone:String, val name:String, val city:String,
+class TUser(val uid:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
 val state:String, val postcode: String, val street:String, val postagecost:String, val postageservice:String)

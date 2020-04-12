@@ -50,39 +50,41 @@
     <!-- RECIPIENT NAME -->
     <TextView
         android:id="@+id/showinfo"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="144dp"
         android:text="@string/showinfo"
-        android:textAppearance="@style/volumetric_"
+        android:textAppearance="@style/sign_in"
         android:gravity="center_horizontal|center_vertical" />
 
 
-    <TextView
+    <EditText
         android:id="@+id/recipient_n"
         android:layout_width="328dp"
         android:layout_height="34dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="200dp"
-        android:text="@string/recipient_n"
-        android:textAppearance="@style/sign_in"
-        android:background="@drawable/rect_view"
+        android:hint="@string/recipient_n"
+        android:autofillHints="@string/recipient_n"
+        android:textAppearance="@style/recipient_n"
+        android:background="@drawable/recipient"
         android:gravity="center_horizontal|center_vertical" />
 
     <!--PHONE NUMBER-->
-    <TextView
+    <EditText
         android:id="@+id/phone_number"
         android:layout_width="328dp"
         android:layout_height="34dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="249dp"
-        android:text="@string/phone_number"
-        android:textAppearance="@style/sign_in"
-        android:background="@drawable/rect_view"
+        android:hint="@string/phone_number"
+        android:autofillHints="@string/phone_number"
+        android:textAppearance="@style/recipient_n"
+        android:background="@drawable/recipient"
         android:gravity="center_horizontal|center_vertical" />
 
     <!-- STREET ADDRESS -->

@@ -46,12 +46,16 @@ class PostageConfirmFragment : Fragment() {
                 val propStreet = dataSnapshot.child("street").value.toString()
                 val propPostcode = dataSnapshot.child("postcode").value.toString()
                 val propCost = dataSnapshot.child("postagecost").value.toString()
+                val propRename = dataSnapshot.child("recipientname").value.toString()
+                val propRephone = dataSnapshot.child("recipientphone").value.toString()
                 storevolumetric.text = propNameTxt
                 storecitytown.text = propCity
                 storestate.text= propState
                 storestreet.text = propStreet
                 storepostcode.text=propPostcode
                 storecost.text=propCost
+                storeName.text=propRename
+                storeNumber.text=propRephone
                 val propPostageService = dataSnapshot.child("postageservice").value.toString()
                 your_item_h.text =propPostageService
 
@@ -60,7 +64,8 @@ class PostageConfirmFragment : Fragment() {
             override fun onCancelled(databaseError: DatabaseError) {}
         }
         suidRef.addListenerForSingleValueEvent(seventListener)
-        val uid = FirebaseAuth.getInstance().currentUser!!.uid
+
+        /*val uid = FirebaseAuth.getInstance().currentUser!!.uid
         val rootRef = FirebaseDatabase.getInstance().reference
         val uidRef = rootRef.child("users").child(uid)
         val eventListener: ValueEventListener = object : ValueEventListener {
@@ -72,7 +77,7 @@ class PostageConfirmFragment : Fragment() {
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         }
-        uidRef.addListenerForSingleValueEvent(eventListener)
+        uidRef.addListenerForSingleValueEvent(eventListener)*/
 
         generatenumber.setOnClickListener {
             getRandomString(16)
@@ -107,5 +112,5 @@ class PostageConfirmFragment : Fragment() {
     }
 
 }
-class EUser(val uid:String, val volumetric:String, val phone:String, val name:String, val city:String,
+class EUser(val uid:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
             val state:String, val postcode: String, val street:String, val postagecost:String, val postageservice:String, val referenceid:String)
