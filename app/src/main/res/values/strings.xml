@@ -40,7 +40,7 @@
     <string name="postage_ser">POSTAGE SERVICE</string>
     <string name="qr_code">QR_CODE</string>
     <string name="successful">SUCCESSFUL !</string>
-    <string name="your_item_h">Your Item Has Been Transferred successfully to [POSTAGE SERVICE]</string>
+    <string name="your_item_h">Your Item Has Been Transferred successfully to </string>
     <string name="here_is_you">Here is your tracking number:\u000D\n\n(TRACKING NUMBER)</string>
     <string name="name">NAME</string>
     <string name="email_id">EMAIL ID</string>

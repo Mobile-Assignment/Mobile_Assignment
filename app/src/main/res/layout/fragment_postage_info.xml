@@ -137,6 +137,7 @@
         android:layout_marginTop="445dp"
         android:hint="@string/postcodeinfo"
         android:autofillHints="@string/postcodeinfo"
+        android:inputType="number"
         android:textAppearance="@style/recipient_n"
         android:background="@drawable/recipient"
         android:gravity="center_horizontal|center_vertical" />

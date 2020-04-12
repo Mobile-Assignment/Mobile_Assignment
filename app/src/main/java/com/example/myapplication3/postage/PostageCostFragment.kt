@@ -48,7 +48,6 @@ class PostageCostFragment : Fragment() {
                 text_result.text = parent?.getItemAtPosition(position).toString()
 
             }
-
         }
         return t
     }

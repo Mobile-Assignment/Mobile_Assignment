@@ -54,6 +54,7 @@
         android:autofillHints="@string/input_volume"
         android:background="@drawable/length"
         android:textAppearance="@style/recipient_n"
+        android:inputType="numberDecimal"
         android:gravity="center_horizontal|center_vertical" />
 
     <!-- POSTAGE COST -->
