@@ -10,12 +10,12 @@
         android:name="com.example.myapplication3.home.HomeFragment"
         android:label="Ez Shipping"
         tools:layout="@layout/fragment_home" />
-
+<!--
     <fragment
         android:id="@+id/track_trace"
         android:name="com.example.myapplication3.track.TrackTrace"
         android:label="Track Trace"
-        tools:layout="@layout/track_trace" />
+        tools:layout="@layout/track_trace" />-->
     <fragment
         android:id="@+id/verifyPhoneFragment"
         android:name="com.example.myapplication3.profile.VerifyPhoneFragment"
@@ -82,5 +82,12 @@
         android:name="com.example.myapplication3.map.MapFragment"
         android:label="Map"
         tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/ContactUs"
+        android:name="com.example.myapplication3.contactus.ContactUs"
+        android:label="Contact Us"
+        tools:layout="@layout/contactus" />
+
 
 </navigation>
