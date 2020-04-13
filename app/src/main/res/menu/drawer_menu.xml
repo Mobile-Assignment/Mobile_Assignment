@@ -17,8 +17,12 @@
         android:icon="@drawable/ic_map"
         android:title="@string/about"/>
     <item
-        android:id="@+id/ContactUs"
+        android:id="@+id/contactUsFragment"
         android:icon="@drawable/ic_contactus"
         android:title="Contact Us" />
+
+    <item
+        android:id="@+id/rateUsFragment"
+        android:title="Rate us" />
 
 </menu>

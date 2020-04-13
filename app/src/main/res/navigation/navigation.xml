@@ -80,14 +80,26 @@
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.myapplication3.map.MapFragment"
-        android:label="Map"
+        android:label="About"
         tools:layout="@layout/fragment_map" />
-
     <fragment
-        android:id="@+id/ContactUs"
-        android:name="com.example.myapplication3.contactus.ContactUs"
-        android:label="Contact Us"
-        tools:layout="@layout/contactus" />
+        android:id="@+id/contactUsFragment"
+        android:name="com.example.myapplication3.contactus.ContactUsFragment"
+        android:label="Contact Us">
+        <action
+            android:id="@+id/actionToSendEmail"
+            app:destination="@id/emailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.myapplication3.contactus.EmailFragment"
+        android:label="Send Email"
+        tools:layout="@layout/fragment_email" />
+    <fragment
+        android:id="@+id/rateUsFragment"
+        android:name="com.example.myapplication3.rating.RateUsFragment"
+        android:label="Rate Us "
+        tools:layout="@layout/fragment_rate_us" />
 
 
 </navigation>
