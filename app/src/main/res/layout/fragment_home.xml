@@ -9,85 +9,66 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--  Rect Browse-->
-        <View
-            android:id="@+id/rect_browse"
-            android:layout_width="match_parent"
-            android:layout_height="143dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/rect_browse" />
 
-        <!-- Rect View -->
-        <View
-            android:id="@+id/rect_view"
-            android:layout_width="match_parent"
-            android:layout_height="141dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="143dp"
-            android:background="@drawable/rect_browse" />
-
-        <!-- TRACK & TRACE -->
-        <Button
-            android:id="@+id/track_trace"
-            android:layout_width="308dp"
-            android:layout_height="56dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="68dp"
-            android:background="@drawable/login_button"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="@string/track_trace"
-            android:textAppearance="@style/track_trace" />
-
-        <!-- POSTAGE CALCULATOR -->
-        <Button
-            android:id="@+id/postage_cal"
-            android:layout_width="309dp"
-            android:layout_height="57dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="29dp"
-            android:layout_marginLeft="29dp"
-            android:layout_marginTop="185dp"
-            android:background="@drawable/login_button"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="@string/postage_cal"
-            android:textAppearance="@style/track_trace" />
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/package_dimensions" />
 
         <TextView
-            android:id="@+id/user_email"
-            android:layout_width="match_parent"
+            android:id="@+id/important"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="46dp"
+            android:layout_marginTop="280dp"
+            android:text="@string/important"
+            android:drawableStart="@drawable/ic_warning_black_24dp"
+            android:textColor="#ff0000"
             android:gravity="center"
-            android:hint="@string/user_email"
-            android:textSize="30sp"
-            android:textStyle="bold|italic" />
+            android:textSize="25sp"/>
 
-        <!-- <Button
-             android:id="@+id/sign_out"
-             android:layout_width="131dp"
-             android:layout_height="39dp"
-             android:layout_alignParentStart="true"
-             android:layout_alignParentLeft="true"
-             android:layout_alignParentTop="true"
-             android:layout_marginStart="114dp"
-             android:layout_marginLeft="114dp"
-             android:layout_marginTop="462dp"
-             android:background="@drawable/rectangle_7"
-             android:gravity="center_horizontal|center_vertical"
-             android:text="@string/sign_out"
-             android:textAppearance="@style/sign_in" />-->
+        <TextView
+            android:id="@+id/infovolumetric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="320dp"
+            android:text="@string/infovolumetric"
+            android:textColor="#ff0000"
+            android:gravity="center"
+            android:textSize="15sp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="365dp"
+            android:background="@drawable/rect_view" />
+
+        <TextView
+            android:id="@+id/vtext"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="380dp"
+            android:text="@string/vtext"
+            android:textColor="#ffff"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/vformula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="500dp"
+            android:text="@string/vformula"
+            android:textColor="#ffff"
+            android:gravity="center"
+            android:textSize="15sp"/>
+        
+
     </RelativeLayout>
 
 </layout>

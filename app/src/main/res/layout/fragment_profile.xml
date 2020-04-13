@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="34dp"
@@ -49,7 +49,7 @@
 
     <TextView
         android:id="@+id/email_id"
-        android:layout_width="191dp"
+        android:layout_width="200dp"
         android:layout_height="34dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
@@ -78,7 +78,7 @@
 
     <EditText
         android:id="@+id/name"
-        android:layout_width="191dp"
+        android:layout_width="200dp"
         android:layout_height="34dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
@@ -92,14 +92,14 @@
     <!--TEXT PHONE-->
     <TextView
         android:id="@+id/text_phone"
-        android:layout_width="191dp"
+        android:layout_width="200dp"
         android:layout_height="34dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="300dp"
         android:drawableStart="@drawable/ic_phone"
         android:text="@string/text_phone"
-        android:textAppearance="@style/name"
+        android:textAppearance="@style/sign_in"
         android:background="@drawable/name_button"
         android:gravity="center_horizontal|center_vertical" />
 

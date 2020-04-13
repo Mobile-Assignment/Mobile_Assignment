@@ -80,7 +80,7 @@
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.myapplication3.map.MapFragment"
-        android:label="About"
+        android:label="Find Us"
         tools:layout="@layout/fragment_map" />
     <fragment
         android:id="@+id/contactUsFragment"

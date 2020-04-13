@@ -23,11 +23,12 @@
     <TextView
         android:id="@+id/volumetric"
         android:layout_width="208dp"
-        android:layout_height="24dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:text="@string/volumetric"
+        android:textSize="15sp"
         android:background="@drawable/volumetric"
         android:textAppearance="@style/volumetric"
         android:gravity="center_horizontal|center_vertical" />

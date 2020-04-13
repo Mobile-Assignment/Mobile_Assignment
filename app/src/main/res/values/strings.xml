@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">EZ Shipping</string>
-    <string name="splash">WELCOME TO ES SHIPPING</string>
+    <string name="splash">WELCOME TO EZ SHIPPING</string>
     <string name="ez_shipping">EZ SHIPPING</string>
     <string name="login">LOGIN</string>
     <string name="login_email">EMAIL ADDRESS</string>
@@ -92,7 +92,15 @@
     <string name="result">Result</string>
     <string name="contact_us">Contact Us</string>
 
-
+    <string name="Please_">Ez Shipping:
+    \n Please Rate Our Service.
+    \n We hope to hear more from you.</string>
+    <string name="important">IMPORTANT !</string>
+    <string name="infovolumetric">INFORMATION ON HOW TO CALCULATE VOLUMETRIC WEIGHT (KG)</string>
+    <string name="vtext">The volumetric divisor has changed to 5000 and applies to Ez Shipping\'s Same Day \n
+    Time Definite and Day Definite products as per the below formula.</string>
+    <string name="vformula"> Formula : \n
+    Length * Width * height / 5000 per piece in the shipment</string>
     <string name="email_contact_us"> Email:
     \n ezshpping@example.com
     </string>

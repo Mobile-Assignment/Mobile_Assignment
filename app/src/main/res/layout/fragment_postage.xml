@@ -21,11 +21,11 @@
         />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/postage_box" />
+        android:layout_marginTop="70dp"
+        android:background="@drawable/package_dimensions" />
 
     <EditText
         android:id="@+id/length_cm_"
@@ -36,7 +36,7 @@
         android:layout_marginTop="250dp"
         android:hint="@string/length_cm_"
         android:textAppearance="@style/length_cm_"
-        android:background="@drawable/length"
+        android:background="@drawable/width"
         android:inputType="number"
         android:gravity="center_horizontal|center_vertical"
         />

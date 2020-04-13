@@ -15,7 +15,7 @@
     <item
         android:id="@+id/mapFragment"
         android:icon="@drawable/ic_map"
-        android:title="@string/about"/>
+        android:title="Find us"/>
     <item
         android:id="@+id/contactUsFragment"
         android:icon="@drawable/ic_contactus"
@@ -23,6 +23,7 @@
 
     <item
         android:id="@+id/rateUsFragment"
+        android:icon="@drawable/ic_rate_review_black_24dp"
         android:title="Rate us" />
 
 </menu>
