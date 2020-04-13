@@ -152,4 +152,10 @@
         <item name="android:textColor">#D4D0D0</item>
     </style>
 
+    <!-- This style is for the splash screen -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>

@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name">EZ Shipping</string>
+    <string name="splash">WELCOME TO ES SHIPPING</string>
     <string name="ez_shipping">EZ SHIPPING</string>
     <string name="login">LOGIN</string>
     <string name="login_email">EMAIL ADDRESS</string>
