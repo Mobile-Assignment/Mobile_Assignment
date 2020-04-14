@@ -38,12 +38,23 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/tvRatingNumber"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="230dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text=""
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/feedbacktext"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="300dp"
         android:lines="5"
         android:hint="Drop Your Suggestions Here"
         android:gravity="top"
@@ -54,7 +65,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="450dp"
         android:background="#021269"
         android:text="Send feedback"
         android:textColor="@android:color/white" />

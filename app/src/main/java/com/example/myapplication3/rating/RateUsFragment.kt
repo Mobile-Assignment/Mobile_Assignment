@@ -28,6 +28,7 @@ class RateUsFragment : Fragment() {
 
         ratingStar.onRatingBarChangeListener = OnRatingBarChangeListener { ratingBar, v, b ->
             tvRatingScale.text = v.toString()
+            tvRatingNumber.text = v.toString()
             when (ratingBar.rating.toInt()) {
                 1 -> tvRatingScale.text = "Very bad"
                 2 -> tvRatingScale.text = "Need some improvement"
@@ -35,6 +36,14 @@ class RateUsFragment : Fragment() {
                 4 -> tvRatingScale.text = "Great"
                 5 -> tvRatingScale.text = "Awesome. I love it"
                 else -> tvRatingScale.text = ""
+            }
+            when (ratingBar.rating.toInt()) {
+                1 -> tvRatingNumber.text = "Rating Score: 1.0"
+                2 -> tvRatingNumber.text = "Rating Score: 2.0"
+                3 -> tvRatingNumber.text = "Rating Score: 3.0"
+                4 -> tvRatingNumber.text = "Rating Score: 4.0"
+                5 -> tvRatingNumber.text = "Rating Score: 5.0"
+                else -> tvRatingNumber.text = ""
             }
         }
         submitFeedback.setOnClickListener(View.OnClickListener {
