@@ -66,7 +66,7 @@ class PostageInfoFragment : Fragment() {
 
             val dpd = DatePickerDialog(requireActivity(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 // Display Selected date in TextView
-                dateTv.text = "$dayOfMonth / $month / $year"
+                dateTv.text = "$dayOfMonth/$month/$year"
             }, year, month, day)
             dpd.show()
 
