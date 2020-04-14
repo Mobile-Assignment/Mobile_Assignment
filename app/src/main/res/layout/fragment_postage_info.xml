@@ -40,7 +40,7 @@
     <View
         android:id="@+id/rect_browse"
         android:layout_width="match_parent"
-        android:layout_height="570dp"
+        android:layout_height="620dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="100dp"
@@ -150,7 +150,7 @@
         android:layout_marginTop="470dp"
         android:background="@drawable/rectangle_8"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content" />
 
 
@@ -161,23 +161,25 @@
         android:layout_marginTop="520dp"
         android:layout_centerHorizontal="true"
         android:textAppearance="@style/sign_in"
-        android:text="@string/time"
-        android:textSize="20sp" />
+        android:autofillHints="TIME"
+        android:hint="TIME"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/pickDateBtn"
         android:text="@string/pick_date"
         android:background="@drawable/rectangle_8"
-        android:layout_marginTop="550dp"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="580dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/dateTv"
-        android:text="@string/date"
-        android:textSize="20sp"
-        android:layout_marginTop="600dp"
+        android:autofillHints="DATE"
+        android:hint="DATE"
+        android:textSize="30sp"
+        android:layout_marginTop="630dp"
         android:textAppearance="@style/sign_in"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -190,8 +192,8 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="640dp"
-        android:text="@string/save_as_dra"
+        android:layout_marginTop="690dp"
+        android:text="@string/submit"
         android:textAppearance="@style/sign_in"
         android:background="@drawable/save_draft"
         android:gravity="center_horizontal|center_vertical" />

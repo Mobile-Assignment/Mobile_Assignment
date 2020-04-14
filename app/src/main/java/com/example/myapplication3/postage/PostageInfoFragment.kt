@@ -57,6 +57,7 @@ class PostageInfoFragment : Fragment() {
             }
             TimePickerDialog(requireActivity(), timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
+
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
@@ -74,6 +75,16 @@ class PostageInfoFragment : Fragment() {
 
 
         save_as_dra.setOnClickListener {
+             if(timeTv.text.toString().isEmpty()){
+                timeTv.error= "Please Choose Your Time"
+                timeTv.requestFocus()
+                return@setOnClickListener
+            }
+            if(dateTv.text.toString().isEmpty()){
+                dateTv.error= "Please Choose Your Date"
+                dateTv.requestFocus()
+                return@setOnClickListener
+            }
                 if(recipient_n.text.toString().trim().isEmpty()){
                     recipient_n.error="Recipient Name Required"
                     recipient_n.requestFocus()

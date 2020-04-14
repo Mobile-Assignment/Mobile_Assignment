@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.fragment_postage.*
 import kotlinx.android.synthetic.main.fragment_postage_cost.*
 import kotlinx.android.synthetic.main.fragment_postage_cost.volumetric
 import kotlinx.android.synthetic.main.fragment_postage_info.*
@@ -93,6 +94,11 @@ class PostageCostFragment : Fragment() {
             doCalculation()
         }
         saveToTrack.setOnClickListener {
+            if (input_volume.text.toString().trim().isEmpty()) {
+                input_volume.error = "Info Required"
+                input_volume.requestFocus()
+                return@setOnClickListener
+            }
             saveToDatabase()
             val action = PostageCostFragmentDirections.actionPostageConfirm()
             Navigation.findNavController(it).navigate(action)

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 
 import com.example.myapplication3.R
 import com.google.firebase.auth.FirebaseAuth
@@ -85,6 +86,16 @@ class PostageConfirmFragment : Fragment() {
             }
             saveToDatabase()
         }
+        backHome.setOnClickListener {
+            if(here_is_you.text.toString().isEmpty()){
+                here_is_you.error="Please Generate Tracking Number"
+                here_is_you.requestFocus()
+                return@setOnClickListener
+            }
+            val action = PostageConfirmFragmentDirections.actionPostageBackHome()
+            Navigation.findNavController(it).navigate(action)
+        }
+
     }
 
     @SuppressLint("SetTextI18n")

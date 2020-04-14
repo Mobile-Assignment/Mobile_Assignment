@@ -26,15 +26,28 @@ class PostageFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        count.setOnClickListener {
-
             count.setOnClickListener {
+                if(length_cm_.text.toString().isEmpty()){
+                    length_cm_.error="Required Field"
+                    length_cm_.requestFocus()
+                    return@setOnClickListener
+                }
+                if(width_cm_.text.toString().isEmpty()){
+                    width_cm_.error="Required Field"
+                    width_cm_.requestFocus()
+                   return@setOnClickListener
+                }
+                if(height_cm_.text.toString().isEmpty()){
+                    height_cm_.error="Required Field"
+                    height_cm_.requestFocus()
+                    return@setOnClickListener
+                }
+                calculation()
                 val action=PostageFragmentDirections.actionSubmitVolumetric()
                 Navigation.findNavController(it).navigate(action)
-                calculation()
                 saveToDatabase()
             }
-        }
+
     }
 
     @SuppressLint("SetTextI18n")

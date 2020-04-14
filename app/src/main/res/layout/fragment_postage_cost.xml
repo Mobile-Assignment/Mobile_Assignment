@@ -49,7 +49,7 @@
     <TextView
         android:id="@+id/cost_result"
         android:layout_width="208dp"
-        android:layout_height="24dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="150dp"
@@ -156,7 +156,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="430dp"
-        android:text="@string/save_as_dra"
+        android:text="@string/submit"
         android:textAppearance="@style/submit"
         android:background="@drawable/save_button"
         android:gravity="center_horizontal|center_vertical" />

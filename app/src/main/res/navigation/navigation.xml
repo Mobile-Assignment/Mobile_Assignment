@@ -76,7 +76,11 @@
     <fragment
         android:id="@+id/postageConfirmFragment"
         android:name="com.example.myapplication3.postage.PostageConfirmFragment"
-        android:label="Postage Confirm" />
+        android:label="Postage Confirm" >
+        <action
+            android:id="@+id/actionPostageBackHome"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.myapplication3.map.MapFragment"
