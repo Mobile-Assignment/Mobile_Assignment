@@ -27,7 +27,7 @@ import java.util.*
 
 class PostageConfirmFragment : Fragment() {
     companion object {
-        private val ALLOWED_CHARACTERS = "0123456789QWERTYUIOPASDFGHJKLZXCVBNM"
+        private val ALLOWED_CHARACTERS = "0123456789"
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +51,8 @@ class PostageConfirmFragment : Fragment() {
                 val propCost = dataSnapshot.child("postagecost").value.toString()
                 val propRename = dataSnapshot.child("recipientname").value.toString()
                 val propRephone = dataSnapshot.child("recipientphone").value.toString()
+                val propDate = dataSnapshot.child("date").value.toString()
+                val propTime = dataSnapshot.child("time").value.toString()
                 storevolumetric.text = propNameTxt
                 storecitytown.text = propCity
                 storestate.text= propState
@@ -59,6 +61,8 @@ class PostageConfirmFragment : Fragment() {
                 storecost.text=propCost
                 storeName.text=propRename
                 storeNumber.text=propRephone
+                storeDate.text=propDate
+                storeTime.text=propTime
                 val propPostageService = dataSnapshot.child("postageservice").value.toString()
                 your_item_h.text =propPostageService
 
@@ -68,22 +72,9 @@ class PostageConfirmFragment : Fragment() {
         }
         suidRef.addListenerForSingleValueEvent(seventListener)
 
-        /*val uid = FirebaseAuth.getInstance().currentUser!!.uid
-        val rootRef = FirebaseDatabase.getInstance().reference
-        val uidRef = rootRef.child("users").child(uid)
-        val eventListener: ValueEventListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val propName = dataSnapshot.child("name").value.toString()
-                val propPhone = dataSnapshot.child("phone").value.toString()
-                storeName.text= propName
-                storeNumber.text = propPhone
-            }
-            override fun onCancelled(databaseError: DatabaseError) {}
-        }
-        uidRef.addListenerForSingleValueEvent(eventListener)*/
 
         generatenumber.setOnClickListener {
-            getRandomString(16)
+            getRandomString(10)
             try{
                 val encoder=BarcodeEncoder()
                 val bitmap = encoder.encodeBitmap(here_is_you.text.toString(), BarcodeFormat.QR_CODE,
@@ -96,12 +87,13 @@ class PostageConfirmFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getRandomString(sizeOfRandomString: Int): String {
         val random = Random()
         val sb = StringBuilder(sizeOfRandomString)
         for (i in 0 until sizeOfRandomString)
             sb.append(ALLOWED_CHARACTERS[random.nextInt(ALLOWED_CHARACTERS.length)])
-        here_is_you.text = sb
+        here_is_you.text = "EZ$sb"
         return sb.toString()
     }
     private fun saveToDatabase() {
@@ -118,7 +110,10 @@ class PostageConfirmFragment : Fragment() {
             storestreet.text.toString(),
             storecost.text.toString(),
             your_item_h.text.toString(),
-            here_is_you.text.toString()
+            here_is_you.text.toString(),
+            storeDate.text.toString(),
+            storeTime.text.toString()
+
         )
         ref.setValue(user)
     }
@@ -126,4 +121,5 @@ class PostageConfirmFragment : Fragment() {
 
 }
 class EUser(val uid:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
-            val state:String, val postcode: String, val street:String, val postagecost:String, val postageservice:String, val referenceid:String)
+            val state:String, val postcode: String, val street:String, val postagecost:String, val postageservice:String, val referenceid:String,
+            val date:String, val time:String)

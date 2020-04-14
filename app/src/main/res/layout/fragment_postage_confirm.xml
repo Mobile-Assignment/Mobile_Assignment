@@ -8,6 +8,16 @@
     tools:context="com.example.myapplication3.postage.PostageConfirmFragment">
 
     <TextView
+        android:id="@+id/storeDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+    <TextView
+        android:id="@+id/storeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+    <TextView
         android:id="@+id/storecost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

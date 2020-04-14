@@ -1,9 +1,16 @@
 package com.example.myapplication3.postage
 
+import android.annotation.SuppressLint
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
+import android.icu.text.SimpleDateFormat
+import android.icu.util.Calendar
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.myapplication3.R
@@ -23,6 +30,8 @@ class PostageInfoFragment : Fragment() {
 
         return inflater.inflate(R.layout.fragment_postage_info, container, false)
     }
+    @SuppressLint("SetTextI18n")
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -39,22 +48,32 @@ class PostageInfoFragment : Fragment() {
         }
         suidRef.addListenerForSingleValueEvent(seventListener)
 
+       pickTimeBtn.setOnClickListener {
+            val cal = Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+                cal.set(Calendar.HOUR_OF_DAY, hour)
+                cal.set(Calendar.MINUTE, minute)
+                timeTv.text = SimpleDateFormat("HH:mm").format(cal.time)
+            }
+            TimePickerDialog(requireActivity(), timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        }
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
 
-/*                val uid = FirebaseAuth.getInstance().currentUser!!.uid
-                val rootRef = FirebaseDatabase.getInstance().reference
-                val uidRef = rootRef.child("users").child(uid)
-                val eventListener: ValueEventListener = object : ValueEventListener {
-                    override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        val propName = dataSnapshot.child("name").value.toString()
-                        val propPhone = dataSnapshot.child("phone").value.toString()
-                        recipient_n.text= propName
-                        phone_number.text = propPhone
-                    }
-                    override fun onCancelled(databaseError: DatabaseError) {}
-                }
-                uidRef.addListenerForSingleValueEvent(eventListener)*/
+        pickDateBtn.setOnClickListener {
 
-            save_as_dra.setOnClickListener {
+            val dpd = DatePickerDialog(requireActivity(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in TextView
+                dateTv.text = "$dayOfMonth / $month / $year"
+            }, year, month, day)
+            dpd.show()
+
+        }
+
+
+        save_as_dra.setOnClickListener {
                 if(recipient_n.text.toString().trim().isEmpty()){
                     recipient_n.error="Recipient Name Required"
                     recipient_n.requestFocus()
@@ -102,10 +121,12 @@ class PostageInfoFragment : Fragment() {
                 city_town.text.toString(),
                 stateinfo.text.toString(),
                 postcodeinfo.text.toString(),
-                street_address.text.toString()
+                street_address.text.toString(),
+                timeTv.text.toString(),
+                dateTv.text.toString()
             )
             ref.setValue(user)
         }
 }
 class MUser(val uid:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
-           val state:String, val postcode: String, val street:String)
+           val state:String, val postcode: String, val street:String , val time: String, val date: String)

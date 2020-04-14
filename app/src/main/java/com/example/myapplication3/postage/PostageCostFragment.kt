@@ -66,6 +66,8 @@ class PostageCostFragment : Fragment() {
                     val propPostcode = dataSnapshot.child("postcode").value.toString()
                     val propRename = dataSnapshot.child("recipientname").value.toString()
                     val propRephone = dataSnapshot.child("recipientphone").value.toString()
+                    val propDate = dataSnapshot.child("date").value.toString()
+                    val propTime = dataSnapshot.child("time").value.toString()
                     volumetric.text = propNameTxt
                     storecitytown.text = propCity
                     storestate.text= propState
@@ -73,25 +75,14 @@ class PostageCostFragment : Fragment() {
                     storepostcode.text=propPostcode
                     storename.text=propRename
                     storenumber.text=propRephone
+                    storedate.text = propDate
+                    storetime.text = propTime
 
                 }
                 override fun onCancelled(databaseError: DatabaseError) {}
             }
             suidRef.addListenerForSingleValueEvent(seventListener)
 
- /*       val uid = FirebaseAuth.getInstance().currentUser!!.uid
-        val rootRef = FirebaseDatabase.getInstance().reference
-        val uidRef = rootRef.child("users").child(uid)
-        val eventListener: ValueEventListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val propName = dataSnapshot.child("name").value.toString()
-                val propPhone = dataSnapshot.child("phone").value.toString()
-                storename.text= propName
-                storenumber.text = propPhone
-            }
-            override fun onCancelled(databaseError: DatabaseError) {}
-        }
-        uidRef.addListenerForSingleValueEvent(eventListener)*/
 
         postage_show.setOnClickListener {
             if (input_volume.text.toString().trim().isEmpty()) {
@@ -126,7 +117,9 @@ class PostageCostFragment : Fragment() {
             storepostcode.text.toString(),
             storestreet.text.toString(),
             cost_result.text.toString(),
-            text_result.text.toString()
+            text_result.text.toString(),
+            storedate.text.toString(),
+            storetime.text.toString()
         )
         ref.setValue(user)
     }
@@ -134,4 +127,4 @@ class PostageCostFragment : Fragment() {
 
 }
 class TUser(val uid:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
-val state:String, val postcode: String, val street:String, val postagecost:String, val postageservice:String)
+val state:String, val postcode: String, val street:String, val postagecost:String, val postageservice:String, val date: String, val time: String)
