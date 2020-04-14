@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.myapplication3.postage.PostageInfoFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <!-- VOLUMETRIC (CM^3) -->
     <TextView
@@ -36,9 +40,8 @@
     <View
         android:id="@+id/rect_browse"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="570dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="100dp"
         android:background="@drawable/rect_view" />
@@ -79,7 +82,7 @@
         android:layout_marginTop="205dp"
         android:hint="@string/phone_number"
         android:autofillHints="@string/phone_number"
-        android:inputType="numberDecimal"
+        android:inputType="phone"
         android:textAppearance="@style/recipient_n"
         android:background="@drawable/recipient"
         android:gravity="center_horizontal|center_vertical" />
@@ -119,7 +122,7 @@
         android:layout_height="34dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="365dp"
+        android:layout_marginTop="370dp"
         android:hint="@string/stateinfo"
         android:autofillHints="@string/stateinfo"
         android:textAppearance="@style/recipient_n"
@@ -133,7 +136,7 @@
         android:layout_height="34dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="415dp"
+        android:layout_marginTop="425dp"
         android:hint="@string/postcodeinfo"
         android:autofillHints="@string/postcodeinfo"
         android:inputType="number"
@@ -143,49 +146,51 @@
 
     <Button
         android:id="@+id/pickTimeBtn"
-        android:text="Pick Time"
-        android:layout_marginTop="460dp"
+        android:text="@string/pick_time"
+        android:layout_marginTop="470dp"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 
-    <!-- SAVE AS DRAFT -->
     <TextView
         android:id="@+id/timeTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="520dp"
         android:layout_centerHorizontal="true"
-        android:text="Time"
-        android:textSize="30sp" />
+        android:text="@string/time"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/pickDateBtn"
-        android:text="Pick Date"
-        android:layout_marginTop="500dp"
+        android:text="@string/pick_date"
+        android:layout_marginTop="550dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/dateTv"
-        android:text="Date"
-        android:textSize="30sp"
-        android:layout_marginTop="500dp"
+        android:text="@string/date"
+        android:textSize="20sp"
+        android:layout_marginTop="600dp"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- SAVE AS DRAFT -->
     <Button
         android:id="@+id/save_as_dra"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="545dp"
+        android:layout_marginTop="640dp"
         android:text="@string/save_as_dra"
         android:textAppearance="@style/sign_in"
         android:background="@drawable/save_draft"
         android:gravity="center_horizontal|center_vertical" />
 
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

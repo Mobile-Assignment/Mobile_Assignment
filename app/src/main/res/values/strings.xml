@@ -31,12 +31,16 @@
     <string name="showinfo">ENTER INFO DETAILS</string>
     <string name="weight_kg_">WEIGHT (KG)</string>
     <string name="volumetric">VOLUMETRIC (KG)</string>
-    <string name="recipient_n">RECIPIENT NAME</string>
+    <string name="recipient_n">SENDER NAME</string>
     <string name="street_address">STREET ADDRESS</string>
     <string name="city_town">CITY/TOWN</string>
     <string name="stateinfo">STATE</string>
     <string name="postcodeinfo">POSTCODE</string>
     <string name="phone_number">PHONE NUMBER</string>
+    <string name="pick_time">PICK TIME</string>
+    <string name="time">TIME</string>
+    <string name="pick_date">PICK DATE</string>
+    <string name="date">DATE</string>
     <string name="save_as_dra">SAVE AS DRAFT</string>
     <string name="postage_ser">POSTAGE SERVICE</string>
     <string name="qr_code">QR_CODE</string>
