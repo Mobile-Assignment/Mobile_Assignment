@@ -83,7 +83,8 @@
         android:background="@drawable/postage_button"
         android:gravity="center_horizontal|top"
         android:text="@string/your_item_h"
-        android:textAppearance="@style/your_item_h" />
+        android:textAppearance="@style/your_item_h"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/your_item_h"
@@ -94,7 +95,8 @@
         android:layout_marginTop="120dp"
         android:background="@drawable/postage_button"
         android:gravity="center_horizontal|top"
-        android:textAppearance="@style/your_item_h" />
+        android:textAppearance="@style/your_item_h"
+        android:textSize="15sp" />
 
     <!-- Rect Browse -->
     <View

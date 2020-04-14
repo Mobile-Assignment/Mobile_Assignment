@@ -40,7 +40,7 @@
 
     <EditText
         android:id="@+id/feedbacktext"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="230dp"
@@ -51,8 +51,9 @@
 
     <Button
         android:id="@+id/submitFeedback"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="370dp"
         android:background="#021269"
         android:text="Send feedback"
