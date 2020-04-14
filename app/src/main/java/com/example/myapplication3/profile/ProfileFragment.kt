@@ -1,7 +1,9 @@
 package com.example.myapplication3.profile
 
+import android.Manifest
 import android.app.Activity.RESULT_OK
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
@@ -9,6 +11,9 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
@@ -21,11 +26,13 @@ import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.fragment_profile.*
 import java.io.ByteArrayOutputStream
 
+
 class ProfileFragment : Fragment() {
 
     private val DEFAULT_IMAGE_URL = "https://picsum.photos/200"
     private lateinit var imageUri : Uri
     private val REQUEST_IMAGE_CAPTURE = 100
+    private val MY_CAMERA_REQUEST_CODE = 100
 
     private val currentUser=FirebaseAuth.getInstance().currentUser
 
@@ -107,10 +114,35 @@ class ProfileFragment : Fragment() {
         }
 
     }
-    private fun takePictureIntent(){
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{pictureIntent ->
-            pictureIntent.resolveActivity(activity?.packageManager!!)?.also {
-                startActivityForResult(pictureIntent, REQUEST_IMAGE_CAPTURE)
+    private fun takePictureIntent() {
+        if (ContextCompat.checkSelfPermission(
+                requireActivity(),
+                Manifest.permission.CAMERA
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf<String>(Manifest.permission.CAMERA), MY_CAMERA_REQUEST_CODE
+            );
+        } else {
+            Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { pictureIntent ->
+                pictureIntent.resolveActivity(activity?.packageManager!!)?.also {
+                    startActivityForResult(pictureIntent, REQUEST_IMAGE_CAPTURE)
+                }
+            }
+        }
+    }
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String?>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == MY_CAMERA_REQUEST_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                context?.toast("PERMISSION GRANTED")
+            } else {
+                context?.toast("PERMISSION DENIED")
             }
         }
     }

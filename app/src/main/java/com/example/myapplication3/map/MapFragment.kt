@@ -1,10 +1,14 @@
 package com.example.myapplication3.map
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 import com.example.myapplication3.R
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -18,6 +22,7 @@ import kotlinx.android.synthetic.main.fragment_map.*
 class MapFragment : Fragment(), OnMapReadyCallback{
 
     private lateinit var googleMap : GoogleMap
+    private val REQUEST_LOCATION_PERMISSION = 1
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -30,7 +35,7 @@ class MapFragment : Fragment(), OnMapReadyCallback{
     override fun onMapReady(map: GoogleMap?) {
         map?.let{
             googleMap = it
-            googleMap.isMyLocationEnabled = true
+            /*googleMap.isMyLocationEnabled = true*/
             val location = LatLng(3.215133, 101.728426)
             googleMap.addMarker((MarkerOptions().position(location).title("EZ SHIPPING HQ")))
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location,5f))
@@ -44,6 +49,43 @@ class MapFragment : Fragment(), OnMapReadyCallback{
             val location3 = LatLng(2.726522, 101.937697)
             googleMap.addMarker((MarkerOptions().position(location3).title("SEREMBAN BRANCH")))
 
+        }
+        enableMyLocation()
+    }
+    // Checks that users have given permission
+    private fun isPermissionGranted() : Boolean {
+        return ContextCompat.checkSelfPermission(
+            requireActivity(),
+            Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+    }
+
+    // Checks if users have given their location and sets location enabled if so.
+    private fun enableMyLocation() {
+        if (isPermissionGranted()) {
+            googleMap.isMyLocationEnabled = true
+        }
+        else {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf<String>(Manifest.permission.ACCESS_FINE_LOCATION),
+                REQUEST_LOCATION_PERMISSION
+            )
+        }
+    }
+
+    // Callback for the result from requesting permissions.
+    // This method is invoked for every call on requestPermissions(android.app.Activity, String[],
+    // int).
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray) {
+        // Check if location permissions are granted and if so enable the
+        // location data layer.
+        if (requestCode == REQUEST_LOCATION_PERMISSION) {
+            if (grantResults.contains(PackageManager.PERMISSION_GRANTED)) {
+                enableMyLocation()
+            }
         }
     }
 
