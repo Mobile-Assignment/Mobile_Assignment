@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="370dp"
-        android:background="#e57373"
+        android:background="#021269"
         android:text="Send feedback"
         android:textColor="@android:color/white" />
 

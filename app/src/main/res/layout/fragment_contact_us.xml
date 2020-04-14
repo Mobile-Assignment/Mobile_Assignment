@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_email_black"
         android:layout_marginTop="15dp"
+        android:drawablePadding="15dp"
         android:text="@string/email_contact_us" />
 
 
@@ -32,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:drawableStart="@drawable/ic_contactus"
+        android:drawablePadding="15dp"
         android:text="@string/phone_number_contactus" />
 
     <TextView
@@ -39,6 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:drawableStart="@drawable/ic_website"
+        android:drawablePadding="15dp"
         android:text="@string/website_contactus" />
 
     <TextView
@@ -46,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:drawableStart="@drawable/ic_map"
+        android:drawablePadding="15dp"
         android:text="@string/location_contactus"/>
 
 

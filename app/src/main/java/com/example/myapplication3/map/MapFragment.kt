@@ -32,8 +32,18 @@ class MapFragment : Fragment(), OnMapReadyCallback{
             googleMap = it
             googleMap.isMyLocationEnabled = true
             val location = LatLng(3.215133, 101.728426)
-            googleMap.addMarker((MarkerOptions().position(location).title("Ez Shpping")))
+            googleMap.addMarker((MarkerOptions().position(location).title("EZ SHIPPING HQ")))
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location,5f))
+
+            val location1 = LatLng(5.415616, 100.322744)
+            googleMap.addMarker((MarkerOptions().position(location1).title("PENANG BRANCH")))
+
+            val location2 = LatLng(2.195947, 102.247380)
+            googleMap.addMarker((MarkerOptions().position(location2).title("MALACCA BRANCH")))
+
+            val location3 = LatLng(2.726522, 101.937697)
+            googleMap.addMarker((MarkerOptions().position(location3).title("SEREMBAN BRANCH")))
+
         }
     }
 

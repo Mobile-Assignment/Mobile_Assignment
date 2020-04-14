@@ -10,12 +10,13 @@
 
     <!-- LENGTH (CM) -->
     <TextView
-        android:layout_width="308dp"
+        android:layout_width="310dp"
         android:layout_height="30dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="5dp"
-        android:text="ENTER ALL THE DETAILS"
+        android:layout_marginTop="10dp"
+        android:text="CALCULATE THE VOLUMETRIC WEIGHT (KG)"
+        android:textSize="15sp"
         android:textAppearance="@style/successful"
         android:gravity="center_horizontal|center_vertical"
         />
@@ -92,7 +93,7 @@
         android:layout_marginTop="411dp"
         android:text="@string/submit"
         android:textAppearance="@style/submit"
-        android:background="@drawable/submit_button"
+        android:background="@drawable/save_draft"
         android:gravity="center_horizontal|center_vertical"
         />
 
