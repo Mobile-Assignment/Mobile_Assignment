@@ -91,7 +91,7 @@ class SignUpScreen : AppCompatActivity() {
                         }
 
                 } else {
-                    Toast.makeText(baseContext, "Sign Up failed. Try again after some time.",
+                    Toast.makeText(baseContext, "Email has already been taken",
                         Toast.LENGTH_SHORT).show()
                 }
             }
