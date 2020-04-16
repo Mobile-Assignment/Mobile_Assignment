@@ -98,7 +98,7 @@ class PostageConfirmFragment : Fragment() {
                 here_is_you.requestFocus()
                 return@setOnClickListener
             }
-            val action = PostageConfirmFragmentDirections.actionPostageBackHome()
+            val action = PostageConfirmFragmentDirections.actionToPayment()
             Navigation.findNavController(it).navigate(action)
         }
 

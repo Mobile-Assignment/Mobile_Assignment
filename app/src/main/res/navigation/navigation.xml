@@ -78,8 +78,8 @@
         android:name="com.example.myapplication3.postage.PostageConfirmFragment"
         android:label="Postage Confirm" >
         <action
-            android:id="@+id/actionPostageBackHome"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/actionToPayment"
+            app:destination="@id/paymentFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
@@ -140,6 +140,15 @@
         <action
             android:id="@+id/actionBackEdit2"
             app:destination="@id/editFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.myapplication3.payment.PaymentFragment"
+        android:label="Payment Details"
+        tools:layout="@layout/fragment_payment">
+        <action
+            android:id="@+id/actionPaymentHome"
+            app:destination="@id/homeFragment" />
     </fragment>
 
 
