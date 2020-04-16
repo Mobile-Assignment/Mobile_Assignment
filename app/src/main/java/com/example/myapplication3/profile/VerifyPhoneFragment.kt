@@ -41,6 +41,7 @@ class VerifyPhoneFragment : Fragment() {
                 .load(user.photoUrl)
                 .into(image_view)
         }
+
         layoutPhone.visibility = View.VISIBLE
         layoutVerification.visibility = View.GONE
 
@@ -72,23 +73,22 @@ class VerifyPhoneFragment : Fragment() {
         }
 
         button_verify.setOnClickListener {
-            val code = edit_text_code.text.toString().trim()
 
-            if(code.isEmpty()){
+            if(edit_text_code.text.toString().isEmpty()){
                 edit_text_code.error = "Code required"
                 edit_text_code.requestFocus()
                 return@setOnClickListener
             }
 
             verificationId?.let{
-                val credential = PhoneAuthProvider.getCredential(it, code)
+                val credential = PhoneAuthProvider.getCredential(it, edit_text_code.text.toString())
                 addPhoneNumber(credential)
             }
         }
     }
 
 
-    private val phoneAuthCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+     private val phoneAuthCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
             addPhoneNumber(phoneAuthCredential)
         }
@@ -99,7 +99,7 @@ class VerifyPhoneFragment : Fragment() {
 
         override fun onCodeSent(verficationId: String, token: PhoneAuthProvider.ForceResendingToken) {
             super.onCodeSent(verficationId, token)
-            this@VerifyPhoneFragment.verificationId
+            this@VerifyPhoneFragment.verificationId = verificationId
         }
     }
 
