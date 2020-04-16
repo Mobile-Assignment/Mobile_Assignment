@@ -105,6 +105,8 @@
     Time Definite and Day Definite products as per the below formula.</string>
     <string name="vformula"> Formula : \n
     Length * Width * height / 5000 per piece in the shipment</string>
+    <string name="vpostage">Postage Cost Calculation :\n
+    1KG / RM0.80 </string>
     <string name="email_contact_us"> Email:
     \n ezshpping@example.com
     </string>

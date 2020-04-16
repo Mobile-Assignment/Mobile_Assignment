@@ -67,6 +67,17 @@
             android:textColor="#ffff"
             android:gravity="center"
             android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/vpostage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="550dp"
+            android:text="@string/vpostage"
+            android:textColor="#ffff"
+            android:gravity="center"
+            android:textSize="15sp"/>
         
 
     </RelativeLayout>
