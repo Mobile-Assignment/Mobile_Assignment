@@ -104,6 +104,11 @@
         android:name="com.example.myapplication3.rating.RateUsFragment"
         android:label="Rate Us "
         tools:layout="@layout/fragment_rate_us" />
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.myapplication3.edit.EditFragment"
+        android:label="Edit Postage"
+        tools:layout="@layout/fragment_edit" />
 
 
 </navigation>

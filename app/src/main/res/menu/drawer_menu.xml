@@ -13,6 +13,10 @@
         android:title="@string/postage_calculator" />
 
     <item
+        android:id="@+id/editFragment"
+        android:title="Edit Postage" />
+
+    <item
         android:id="@+id/mapFragment"
         android:icon="@drawable/ic_map"
         android:title="Find us"/>
