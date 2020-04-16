@@ -1,4 +1,4 @@
-package com.example.myapplication3.postage
+package com.example.myapplication3.edit
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -14,31 +14,20 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.integration.android.IntentIntegrator
-import com.journeyapps.barcodescanner.BarcodeEncoder
-import kotlinx.android.synthetic.main.fragment_postage_confirm.*
-import kotlinx.android.synthetic.main.fragment_postage_confirm.storecitytown
-import kotlinx.android.synthetic.main.fragment_postage_confirm.storepostcode
-import kotlinx.android.synthetic.main.fragment_postage_confirm.storestate
-import kotlinx.android.synthetic.main.fragment_postage_confirm.storestreet
-import kotlinx.android.synthetic.main.fragment_postage_cost.*
-import java.util.*
+import kotlinx.android.synthetic.main.fragment_edit_cost.*
 
 
-class PostageConfirmFragment : Fragment() {
-    companion object {
-        private val ALLOWED_CHARACTERS = "0123456789"
-    }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+class EditCostFragment : Fragment() {
+
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_postage_confirm, container, false)
+        return inflater.inflate(R.layout.fragment_edit_cost, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val suid = FirebaseAuth.getInstance().currentUser!!.uid
         val srootRef = FirebaseDatabase.getInstance().reference
         val suidRef = srootRef.child("postage").child(suid)
@@ -54,92 +43,82 @@ class PostageConfirmFragment : Fragment() {
                 val propRephone = dataSnapshot.child("recipientphone").value.toString()
                 val propDate = dataSnapshot.child("date").value.toString()
                 val propTime = dataSnapshot.child("time").value.toString()
+                val propPostService = dataSnapshot.child("postageservice").value.toString()
+                val propReferenceid = dataSnapshot.child("referenceid").value.toString()
                 val proplength= dataSnapshot.child("length").value.toString()
                 val propwidth = dataSnapshot.child("width").value.toString()
                 val propheight = dataSnapshot.child("height").value.toString()
-                storevolumetric.text = propNameTxt
+                length.text=proplength
+                width.text=propwidth
+                height.text=propheight
                 storecitytown.text = propCity
-                storestate.text= propState
+                storestate.text = propState
                 storestreet.text = propStreet
-                storepostcode.text=propPostcode
-                storecost.text=propCost
-                storeName.text=propRename
-                storeNumber.text=propRephone
-                storeDate.text=propDate
-                storeTime.text=propTime
-                length_cm_.text = proplength
-                width_cm_.text= propwidth
-                height_cm_.text = propheight
-                val propPostageService = dataSnapshot.child("postageservice").value.toString()
-                your_item_h.text =propPostageService
-
-
+                storepostcode.text = propPostcode
+                storecost.text = propCost
+                storeName.text = propRename
+                storeNumber.text = propRephone
+                storeDate.text = propDate
+                storeTime.text = propTime
+                storeservice.text = propPostService
+                storereference.text = propReferenceid
+                volumetric.text=propNameTxt
             }
+
             override fun onCancelled(databaseError: DatabaseError) {}
         }
         suidRef.addListenerForSingleValueEvent(seventListener)
 
-
-        generatenumber.setOnClickListener {
-            getRandomString(10)
-            try{
-                val encoder=BarcodeEncoder()
-                val bitmap = encoder.encodeBitmap(here_is_you.text.toString(), BarcodeFormat.QR_CODE,
-                500,500)
-                image_qr.setImageBitmap(bitmap)
-            }catch (e:Exception){
-                e.printStackTrace()
-            }
-            saveToDatabase()
-        }
-        backHome.setOnClickListener {
-            if(here_is_you.text.toString().isEmpty()){
-                here_is_you.error="Please Generate Tracking Number"
-                here_is_you.requestFocus()
+        postage_show.setOnClickListener {
+            if (inputvolume.text.toString().trim().isEmpty()) {
+                inputvolume.error = "Info Required"
+                inputvolume.requestFocus()
                 return@setOnClickListener
             }
-            val action = PostageConfirmFragmentDirections.actionPostageBackHome()
+            doCalculation()
+        }
+        count.setOnClickListener {
+            if (inputvolume.text.toString().trim().isEmpty()) {
+                inputvolume.error = "Info Required"
+                inputvolume.requestFocus()
+                return@setOnClickListener
+            }
+            saveToDatabase()
+            val action = EditCostFragmentDirections.actionBackToEdit()
             Navigation.findNavController(it).navigate(action)
         }
 
     }
-
-    @SuppressLint("SetTextI18n")
-    private fun getRandomString(sizeOfRandomString: Int): String {
-        val random = Random()
-        val sb = StringBuilder(sizeOfRandomString)
-        for (i in 0 until sizeOfRandomString)
-            sb.append(ALLOWED_CHARACTERS[random.nextInt(ALLOWED_CHARACTERS.length)])
-        here_is_you.text = "EZ$sb"
-        return sb.toString()
-    }
     private fun saveToDatabase() {
         val uid=FirebaseAuth.getInstance().uid ?: ""
         val ref= FirebaseDatabase.getInstance().getReference("/postage/$uid")
-        val user = EUser(
+        val user = CUser(
             uid,
-            length_cm_.text.toString(),
-            width_cm_.text.toString(),
-            height_cm_.text.toString(),
-            storevolumetric.text.toString(),
+            length.text.toString(),
+            width.text.toString(),
+            height.text.toString(),
+            volumetric.text.toString(),
             storeNumber.text.toString(),
             storeName.text.toString(),
             storecitytown.text.toString(),
             storestate.text.toString(),
             storepostcode.text.toString(),
             storestreet.text.toString(),
-            storecost.text.toString(),
-            your_item_h.text.toString(),
-            here_is_you.text.toString(),
+            costresult.text.toString(),
+            storeservice.text.toString(),
+            storereference.text.toString(),
             storeDate.text.toString(),
             storeTime.text.toString()
 
         )
         ref.setValue(user)
     }
-
+    @SuppressLint("SetTextI18n")
+    private fun doCalculation(){
+        costresult.text = "Postage Cost: RM " + (inputvolume.text.toString().toDouble() * 0.8 )
+    }
 
 }
-class EUser(val uid:String, val length:String, val width:String, val height:String,val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
+class CUser(val uid:String, val length:String, val width:String, val height:String,val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
             val state:String, val postcode: String, val street:String, val postagecost:String, val postageservice:String, val referenceid:String,
             val date:String, val time:String)

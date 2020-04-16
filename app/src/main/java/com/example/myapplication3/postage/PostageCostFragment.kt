@@ -14,10 +14,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.fragment_postage.*
 import kotlinx.android.synthetic.main.fragment_postage_cost.*
 import kotlinx.android.synthetic.main.fragment_postage_cost.volumetric
-import kotlinx.android.synthetic.main.fragment_postage_info.*
+
 
 
 class PostageCostFragment : Fragment() {
@@ -69,6 +68,12 @@ class PostageCostFragment : Fragment() {
                     val propRephone = dataSnapshot.child("recipientphone").value.toString()
                     val propDate = dataSnapshot.child("date").value.toString()
                     val propTime = dataSnapshot.child("time").value.toString()
+                    val proplength= dataSnapshot.child("length").value.toString()
+                    val propwidth = dataSnapshot.child("width").value.toString()
+                    val propheight = dataSnapshot.child("height").value.toString()
+                    length_cm.text = proplength
+                    width_cm.text= propwidth
+                    height_cm.text = propheight
                     volumetric.text = propNameTxt
                     storecitytown.text = propCity
                     storestate.text= propState
@@ -115,6 +120,9 @@ class PostageCostFragment : Fragment() {
         val ref= FirebaseDatabase.getInstance().getReference("/postage/$uid")
         val user = TUser(
             uid,
+            length_cm.text.toString(),
+            width_cm.text.toString(),
+            height_cm.text.toString(),
             volumetric.text.toString(),
             storenumber.text.toString(),
             storename.text.toString(),
@@ -132,5 +140,5 @@ class PostageCostFragment : Fragment() {
 
 
 }
-class TUser(val uid:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
+class TUser(val uid:String, val length:String, val width:String, val height:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
 val state:String, val postcode: String, val street:String, val postagecost:String, val postageservice:String, val date: String, val time: String)

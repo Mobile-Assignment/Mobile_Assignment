@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 
 import com.example.myapplication3.R
 import com.google.firebase.auth.FirebaseAuth
@@ -21,6 +22,11 @@ class EditFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
+
+        return inflater.inflate(R.layout.fragment_edit, container, false)
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val suid = FirebaseAuth.getInstance().currentUser!!.uid
         val srootRef = FirebaseDatabase.getInstance().reference
         val suidRef = srootRef.child("postage").child(suid)
@@ -48,11 +54,21 @@ class EditFragment : Fragment() {
                 editInfoPhone.text=propRephone
                 editInfoDate.text=propDate
                 editInfoTime.text=propTime
+                editInfoService.text=propPostService
+                editInfoReference.text=propReferenceid
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         }
         suidRef.addListenerForSingleValueEvent(seventListener)
-        return inflater.inflate(R.layout.fragment_edit, container, false)
+
+        editVolumetric.setOnClickListener{
+            val action=EditFragmentDirections.actionEditVolumetric()
+            Navigation.findNavController(it).navigate(action)
+        }
+        editInfo.setOnClickListener{
+            val action=EditFragmentDirections.actionToEditInfoDetail()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 }
 

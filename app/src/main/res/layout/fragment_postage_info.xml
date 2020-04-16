@@ -12,6 +12,22 @@
         android:layout_height="wrap_content">
 
     <!-- VOLUMETRIC (CM^3) -->
+        <TextView
+            android:id="@+id/length_cm_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+        <TextView
+            android:id="@+id/width_cm_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+        <TextView
+            android:id="@+id/height_cm_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
     <TextView
         android:id="@+id/volumetric_"
         android:layout_width="180dp"

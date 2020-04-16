@@ -108,7 +108,39 @@
         android:id="@+id/editFragment"
         android:name="com.example.myapplication3.edit.EditFragment"
         android:label="Edit Postage"
-        tools:layout="@layout/fragment_edit" />
+        tools:layout="@layout/fragment_edit" >
+        <action
+            android:id="@+id/actionEditVolumetric"
+            app:destination="@id/editVolumetricFragment" />
+        <action
+            android:id="@+id/actionToEditInfoDetail"
+            app:destination="@id/editInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editVolumetricFragment"
+        android:name="com.example.myapplication3.edit.EditVolumetricFragment"
+        android:label=" Edit Volumetric (KG)"
+        tools:layout="@layout/fragment_edit_volumetric" >
+        <action
+            android:id="@+id/actionToEditCost"
+            app:destination="@id/editCostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editCostFragment"
+        android:name="com.example.myapplication3.edit.EditCostFragment"
+        android:label="Edit Postage Cost" >
+        <action
+            android:id="@+id/actionBackToEdit"
+            app:destination="@id/editFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editInfoFragment"
+        android:name="com.example.myapplication3.edit.EditInfoFragment"
+        android:label="Edit Info Details">
+        <action
+            android:id="@+id/actionBackEdit2"
+            app:destination="@id/editFragment" />
+    </fragment>
 
 
 </navigation>

@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="550dp"
             android:textSize="15sp"
             android:background="@drawable/volumetric"
             android:textAppearance="@style/volumetric"
@@ -157,7 +157,7 @@
             android:layout_height="30dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="600dp"
             android:text="POSTAGE SERVICE INFO"
             android:textSize="15sp"
             android:textAppearance="@style/successful"
@@ -169,7 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="650dp"
             android:background="@drawable/volumetric"
             android:gravity="center_horizontal|center_vertical"
             android:textAppearance="@style/volumetric"
@@ -181,7 +181,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="650dp"
+            android:layout_marginTop="700dp"
             android:background="@drawable/volumetric"
             android:gravity="center_horizontal|center_vertical"
             android:textAppearance="@style/volumetric"
@@ -193,7 +193,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="700dp" />
+            android:layout_marginTop="750dp" />
 
     </RelativeLayout>
 </ScrollView>

@@ -60,9 +60,12 @@ class PostageFragment : Fragment() {
         val ref= FirebaseDatabase.getInstance().getReference("/postage/$uid")
         val user = User(
             uid,
+            length_cm_.text.toString(),
+            width_cm_.text.toString(),
+            height_cm_.text.toString(),
             volumetric_result.text.toString()
         )
         ref.setValue(user)
     }
 }
-class User(val uid:String, val volumetric:String )
+class User(val uid:String, val length:String, val width:String, val height:String, val volumetric:String )

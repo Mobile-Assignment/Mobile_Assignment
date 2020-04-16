@@ -20,6 +20,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_postage_info.*
+import kotlinx.android.synthetic.main.fragment_postage_info.height_cm_
+import kotlinx.android.synthetic.main.fragment_postage_info.length_cm_
+import kotlinx.android.synthetic.main.fragment_postage_info.width_cm_
 
 
 class PostageInfoFragment : Fragment() {
@@ -43,6 +46,12 @@ class PostageInfoFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val propNameTxt = dataSnapshot.child("volumetric").value.toString()
                 volumetric.text = propNameTxt
+                val proplength= dataSnapshot.child("length").value.toString()
+                val propwidth = dataSnapshot.child("width").value.toString()
+                val propheight = dataSnapshot.child("height").value.toString()
+                length_cm_.text = proplength
+                width_cm_.text= propwidth
+                height_cm_.text = propheight
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         }
@@ -126,6 +135,9 @@ class PostageInfoFragment : Fragment() {
             val ref= FirebaseDatabase.getInstance().getReference("/postage/$uid")
             val user = MUser(
                 uid,
+                length_cm_.text.toString(),
+                width_cm_.text.toString(),
+                height_cm_.text.toString(),
                 volumetric.text.toString(),
                 phone_number.text.toString(),
                 recipient_n.text.toString(),
@@ -139,5 +151,5 @@ class PostageInfoFragment : Fragment() {
             ref.setValue(user)
         }
 }
-class MUser(val uid:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
+class MUser(val uid:String, val length:String, val width:String, val height:String, val volumetric:String, val recipientphone:String, val recipientname:String, val city:String,
            val state:String, val postcode: String, val street:String , val time: String, val date: String)
