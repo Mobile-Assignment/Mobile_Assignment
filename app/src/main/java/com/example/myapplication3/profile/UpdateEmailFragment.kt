@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.bumptech.glide.Glide
 import com.example.myapplication3.R
 import com.example.myapplication3.util.toast
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import kotlinx.android.synthetic.main.fragment_update_email.*
+import kotlinx.android.synthetic.main.fragment_update_email.image_view
 
 
 class UpdateEmailFragment : Fragment() {
@@ -28,6 +30,11 @@ class UpdateEmailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        currentUser?.let { user ->
+            Glide.with(this)
+                .load(user.photoUrl)
+                .into(image_view)
+        }
         layoutPassword.visibility =View.VISIBLE
         layoutUpdateEmail.visibility = View.GONE
 

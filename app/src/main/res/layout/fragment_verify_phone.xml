@@ -12,7 +12,7 @@
 
         <RelativeLayout
             android:id="@+id/layoutHead"
-            android:background="#5CC09F"
+            android:background="#4287f5"
             android:layout_width="match_parent"
             android:layout_height="200dp">
 
@@ -37,11 +37,11 @@
                 android:layout_height="wrap_content"/>
 
             <ProgressBar
-                android:visibility="invisible"
                 android:id="@+id/progressbar_pic"
-                android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
 
         </RelativeLayout>
 
@@ -70,6 +70,7 @@
                 android:gravity="center_vertical">
 
                 <com.hbb20.CountryCodePicker
+                    app:ccp_defaultPhoneCode="60"
                     android:id="@+id/ccp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -141,6 +142,7 @@
                 android:textAllCaps="false"
                 android:text="Verify"
                 android:id="@+id/button_verify"
+                android:background="@drawable/save_draft"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"/>
 

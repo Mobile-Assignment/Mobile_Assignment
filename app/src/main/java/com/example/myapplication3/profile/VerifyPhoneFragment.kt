@@ -6,19 +6,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.bumptech.glide.Glide
 import com.example.myapplication3.R
 import com.example.myapplication3.util.toast
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_verify_phone.*
+import kotlinx.android.synthetic.main.fragment_verify_phone.image_view
 import java.util.concurrent.TimeUnit
 
 
 class VerifyPhoneFragment : Fragment() {
 
     private var verificationId : String? = null
+    private val currentUser = FirebaseAuth.getInstance().currentUser
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +35,12 @@ class VerifyPhoneFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        currentUser?.let { user ->
+            Glide.with(this)
+                .load(user.photoUrl)
+                .into(image_view)
+        }
         layoutPhone.visibility = View.VISIBLE
         layoutVerification.visibility = View.GONE
 
