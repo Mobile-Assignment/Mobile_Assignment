@@ -2,6 +2,7 @@ package com.example.myapplication3.profile
 
 import android.Manifest
 import android.app.Activity.RESULT_OK
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -11,7 +12,7 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -33,6 +34,8 @@ class ProfileFragment : Fragment() {
     private lateinit var imageUri : Uri
     private val REQUEST_IMAGE_CAPTURE = 100
     private val MY_CAMERA_REQUEST_CODE = 100
+    private val MY_GALLERY_REQUEST_CODE = 100
+    private val IMAGE_PICK_CODE = 1
 
     private val currentUser=FirebaseAuth.getInstance().currentUser
 
@@ -62,8 +65,10 @@ class ProfileFragment : Fragment() {
 
         }
         image_view.setOnClickListener {
-            takePictureIntent()
+            /*takePictureIntent()*/
+            showPictureDialog()
         }
+
         save.setOnClickListener {
             val photo = when {
                 ::imageUri.isInitialized -> imageUri
@@ -114,6 +119,38 @@ class ProfileFragment : Fragment() {
         }
 
     }
+    private fun choosePhotoFromGallery() {
+        if (ContextCompat.checkSelfPermission(
+                requireActivity(),
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf<String>(Manifest.permission.READ_EXTERNAL_STORAGE), MY_GALLERY_REQUEST_CODE
+            );
+        } else {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type="image/*"
+        startActivityForResult(intent, IMAGE_PICK_CODE) }
+        }
+
+    private fun showPictureDialog() {
+        val pictureDialog: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(requireActivity())
+        pictureDialog.setTitle("Select Action")
+        val pictureDialogItems = arrayOf(
+            "Select photo from gallery",
+            "Capture photo from camera"
+        )
+        pictureDialog.setItems(pictureDialogItems,
+            DialogInterface.OnClickListener { dialog, which ->
+                when (which) {
+                    0 -> choosePhotoFromGallery()
+                    1 -> takePictureIntent()
+                }
+            })
+        pictureDialog.show()
+    }
     private fun takePictureIntent() {
         if (ContextCompat.checkSelfPermission(
                 requireActivity(),
@@ -135,8 +172,7 @@ class ProfileFragment : Fragment() {
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String?>,
-        grantResults: IntArray
-    ) {
+        grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == MY_CAMERA_REQUEST_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -145,12 +181,27 @@ class ProfileFragment : Fragment() {
                 context?.toast("PERMISSION DENIED")
             }
         }
+        else if(requestCode == MY_GALLERY_REQUEST_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                context?.toast("PERMISSION GRANTED")
+            } else {
+                context?.toast("PERMISSION DENIED")
+            }
+        }
     }
 
+    var selectedPhotoUri: Uri? = null
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == IMAGE_PICK_CODE && resultCode == RESULT_OK){
+            if (data != null) {
+                selectedPhotoUri = data.data
+            }
+            val imageBitmap2 =  MediaStore.Images.Media.getBitmap(activity?.contentResolver, selectedPhotoUri) as Bitmap
+            uploadImageAndSaveUri(imageBitmap2)
 
-        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+        }
+         else if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
             val imageBitmap = data?.extras?.get("data") as Bitmap
             uploadImageAndSaveUri(imageBitmap)
         }
@@ -172,7 +223,6 @@ class ProfileFragment : Fragment() {
                     urlTask.result?.let{
                         imageUri = it
                         activity?.toast(imageUri.toString())
-
                         image_view.setImageBitmap(bitmap)
                     }
                 }
@@ -183,6 +233,7 @@ class ProfileFragment : Fragment() {
             }
         }
     }
+
     private fun saveToDatabase() {
         val uid=FirebaseAuth.getInstance().uid ?: ""
         val ref= FirebaseDatabase.getInstance().getReference("/users/$uid")
